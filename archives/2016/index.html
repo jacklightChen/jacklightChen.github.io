@@ -71,7 +71,7 @@
         isCategory: false,
         fancybox_js: "//cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js",
         scrollreveal: "//cdn.bootcss.com/scrollReveal.js/3.1.4/scrollreveal.min.js",
-        search: undefined
+        search: true
     }
 </script>
 
@@ -103,6 +103,13 @@
 
         
 
+        
+            <form id="search-form">
+            <input type="text" id="local-search-input" name="q" placeholder="search..." class="search form-control" autocomplete="off" autocorrect="off" searchonload="true" />
+            <i class="fa fa-times" onclick="resetSearch()"></i>
+            </form>
+            <div id="local-search-result"></div>
+            <p class='no-result'>No results found <i class='fa fa-spinner fa-pulse'></i></p>
         
 
 
@@ -178,7 +185,7 @@
                 
                 <section class="switch-part switch-part3">
                 
-                    <div id="js-aboutme">一枚只知道死磕的Javaer 估计偏后端了 QQ:1797079433</div>
+                    <div id="js-aboutme">只知道死磕的Javaer一枚 估计以后要往后端走了 QQ:1797079433</div>
                 </section>
                 
             </div>
@@ -412,7 +419,13 @@
         </div>
         
     </div>
+	<script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<span id="busuanzi_container_site_pv">
+    共有<span id="busuanzi_value_site_pv"></span>可爱的小伙伴到此一游
+</span>
 </footer>
+
     </div>
     
 <script data-main="/js/main.js" src="//cdn.bootcss.com/require.js/2.2.0/require.min.js"></script>
