@@ -365,6 +365,62 @@ time limit per test 1 secondmemory limit per test 256 megabytesinput standard in
 
 
     
+      <div class="duoshuo" id="comments">
+    <div id="comment-box" ></div>
+    <div class="ds-thread" id="ds-thread" data-thread-key="2016/10/24/The-New-Year-Meeting-Friends-Codeforces-Round-375-A/" data-title="The New Year: Meeting Friends Codeforces Round#375-A" data-url="http://yoursite.com/2016/10/24/The-New-Year-Meeting-Friends-Codeforces-Round-375-A/"></div>
+    <script>
+        var duoshuoQuery = {short_name:"jacklightchen"};
+        var loadComment = function(){
+            var d = document, s = d.createElement('script');
+            s.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+            s.async = true; s.charset = 'UTF-8';
+            (d.head || d.body).appendChild(s);
+        }
+
+        
+            // Add comment count
+            $(function(){ 
+                var jsonUrl = "http://api.duoshuo.com/threads/counts.jsonp?short_name=jacklightchen&threads=2016/10/24/The-New-Year-Meeting-Friends-Codeforces-Round-375-A/&callback=?";
+                $.getJSON(jsonUrl, function(result){
+                    $.each(result.response, function(i, field){
+                        var value = field.comments;
+                        if (value > 0) {
+                            $(".count-comment").text(value);
+                            return;
+                        }
+                    })
+                })
+            })
+        
+    </script>
+    
+    <aside class="comment-bar">
+        <a href="javascript:void(0);">
+            <i class="fa fa-commenting-o animated infinite pulse"></i>
+            <i class="fa fa-spinner fa-pulse"></i>
+            <span class="count-comment"></span>
+        </a>
+    </aside>
+    <script>
+        var $commentBar = $("#comments aside.comment-bar");
+        var load$hide = function(){
+            $commentBar.find("a > i").toggle();
+            loadComment();
+            $commentBar.fadeOut(800);
+        }
+        $commentBar.click(function(){
+            load$hide();
+        })
+        $commentBar.children("a").hover(function(){
+            load$hide();
+        })
+        if (window.location.hash === "#comments") {
+            load$hide();
+        }
+    </script>
+
+</div>
+    
 
 
 
@@ -385,7 +441,7 @@ time limit per test 1 secondmemory limit per test 256 megabytesinput standard in
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/I-m-here-waiting-for-Your-touch/">I'm here waiting for Your touch</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/POJ-3461-Oulipo-KMP详解/">POJ 3461 Oulipo(KMP详解)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/Exams-Codeforces-Round-377-D-贪心-二分/">Exams Codeforces Round#377-D(贪心+二分)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/Sanatorium-Codeforces-Round-377-C-逻辑/">Sanatorium Codeforces Round#377-C(逻辑)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/SHUOJ-1611-矩阵连乘问题（dp）/">SHUOJ 1611 矩阵连乘问题（dp）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/SHUOJ-2065-Jazz-Charles的Dog数列-矩阵快速幂/">SHUOJ 2065 Jazz_Charles的Dog数列(矩阵快速幂)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/Text-Document-Analysis-Codeforces-Round-375-B/">Text Document Analysis Codeforces Round#375-B</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/The-New-Year-Meeting-Friends-Codeforces-Round-375-A/">The New Year: Meeting Friends Codeforces Round#375-A</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/Verse-Pattern-Codeforces-Intel-Round-B/">Verse Pattern Codeforces Intel Round-B</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/Broken-Clock-Codeforces-Intel-Round-A/">Broken Clock Codeforces Intel Round-A</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/Passwords-Codeforces-Round-374-B/">Passwords Codeforces Round#374-B</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/异或交换两数的陷阱/">异或交换两数的陷阱</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/Anatoly-and-Cockroaches-Codeforces-Round-373-B/">Anatoly and Cockroaches Codeforces Round#373-B</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/成功的背后！（给所有IT人）（转）/">成功的背后！（给所有IT人）（转）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/hdu-5835-续缘之路/">hdu-5835-续缘之路</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/hdu5842-Lweb-and-String-续缘之路/">hdu5842-Lweb and String-续缘之路</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/hdu5832-A water problem-续缘之路/">hdu5832-A water problem-续缘之路</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/I'm here waiting for Your touch/">I'm here waiting for Your touch</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/POJ-3461-Oulipo-KMP详解/">POJ 3461 Oulipo(KMP详解)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/Exams-Codeforces-Round-377-D-贪心-二分/">Exams Codeforces Round#377-D(贪心+二分)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/Sanatorium-Codeforces-Round-377-C-逻辑/">Sanatorium Codeforces Round#377-C(逻辑)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/SHUOJ-1611-矩阵连乘问题（dp）/">SHUOJ 1611 矩阵连乘问题（dp）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/SHUOJ-2065-Jazz-Charles的Dog数列-矩阵快速幂/">SHUOJ 2065 Jazz_Charles的Dog数列(矩阵快速幂)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/Text-Document-Analysis-Codeforces-Round-375-B/">Text Document Analysis Codeforces Round#375-B</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/The-New-Year-Meeting-Friends-Codeforces-Round-375-A/">The New Year: Meeting Friends Codeforces Round#375-A</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/Verse-Pattern-Codeforces-Intel-Round-B/">Verse Pattern Codeforces Intel Round-B</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/Broken-Clock-Codeforces-Intel-Round-A/">Broken Clock Codeforces Intel Round-A</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/Passwords-Codeforces-Round-374-B/">Passwords Codeforces Round#374-B</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/异或交换两数的陷阱/">异或交换两数的陷阱</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/Anatoly-and-Cockroaches-Codeforces-Round-373-B/">Anatoly and Cockroaches Codeforces Round#373-B</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/成功的背后！（给所有IT人）（转）/">成功的背后！（给所有IT人）（转）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/hdu-5835-续缘之路/">hdu-5835-续缘之路</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/hdu5842-Lweb-and-String-续缘之路/">hdu5842-Lweb and String-续缘之路</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/hdu5832-A water problem-续缘之路/">hdu5832-A water problem-续缘之路</a></li></ul>
 
 
 
