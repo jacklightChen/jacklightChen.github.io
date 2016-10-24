@@ -1,0 +1,575 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="Oulipo
+Time Limit: 1000MS         Memory Limit: 65536KTotal Submissions: 36962         Accepted: 14918DescriptionThe French author Georges Perec (1936–1982) once wrote a book, La disparition, without">
+<meta property="og:type" content="article">
+<meta property="og:title" content="POJ 3461 Oulipo(KMP详解)">
+<meta property="og:url" content="http://yoursite.com/2016/10/24/POJ-3461-Oulipo-KMP详解/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Oulipo
+Time Limit: 1000MS         Memory Limit: 65536KTotal Submissions: 36962         Accepted: 14918DescriptionThe French author Georges Perec (1936–1982) once wrote a book, La disparition, without">
+<meta property="og:updated_time" content="2016-10-24T04:55:02.607Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="POJ 3461 Oulipo(KMP详解)">
+<meta name="twitter:description" content="Oulipo
+Time Limit: 1000MS         Memory Limit: 65536KTotal Submissions: 36962         Accepted: 14918DescriptionThe French author Georges Perec (1936–1982) once wrote a book, La disparition, without">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/10/24/POJ-3461-Oulipo-KMP详解/"/>
+
+
+  <title> POJ 3461 Oulipo(KMP详解) | Hexo </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Hexo</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+            日程
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                POJ 3461 Oulipo(KMP详解)
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-24T12:36:23+08:00" content="2016-10-24">
+              2016-10-24
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><font color="#6495ED" size="6">Oulipo</font></p>
+<p><font color="#008000">Time Limit: 1000MS         Memory Limit: 65536K<br>Total Submissions: 36962         Accepted: 14918<br>Description</font><br>The French author Georges Perec (1936–1982) once wrote a book, La disparition, without the letter ‘e’.<a id="more"></a> He was a member of the Oulipo group. A quote from the book:</p>
+<p>Tout avait Pair normal, mais tout s’affirmait faux. Tout avait Fair normal, d’abord, puis surgissait l’inhumain, l’affolant. Il aurait voulu savoir où s’articulait l’association qui l’unissait au roman : stir son tapis, assaillant à tout instant son imagination, l’intuition d’un tabou, la vision d’un mal obscur, d’un quoi vacant, d’un non-dit : la vision, l’avision d’un oubli commandant tout, où s’abolissait la raison : tout avait l’air normal mais…</p>
+<p>Perec would probably have scored high (or rather, low) in the following contest. People are asked to write a perhaps even meaningful text on some subject with as few occurrences of a given “word” as possible. Our task is to provide the jury with a program that counts these occurrences, in order to obtain a ranking of the competitors. These competitors often write very long texts with nonsense meaning; a sequence of 500,000 consecutive ‘T’s is not unusual. And they never use spaces.</p>
+<p>So we want to quickly find out how often a word, i.e., a given string, occurs in a text. More formally: given the alphabet {‘A’, ‘B’, ‘C’, …, ‘Z’} and two finite strings over that alphabet, a word W and a text T, count the number of occurrences of W in T. All the consecutive characters of W must exactly match consecutive characters of T. Occurrences may overlap.</p>
+<p>Input</p>
+<p>The first line of the input file contains a single number: the number of test cases to follow. Each test case has the following format:</p>
+<p>One line with the word W, a string over {‘A’, ‘B’, ‘C’, …, ‘Z’}, with 1 ≤ |W| ≤ 10,000 (here |W| denotes the length of the string W).<br>One line with the text T, a string over {‘A’, ‘B’, ‘C’, …, ‘Z’}, with |W| ≤ |T| ≤ 1,000,000.<br>Output</p>
+<p>For every test case in the input file, the output should contain a single number, on a single line: the number of occurrences of the word W in the text T.</p>
+<p>Sample Input</p>
+<p>3<br>BAPC<br>BAPC<br>AZA<br>AZAZAZA<br>VERDI<br>AVERDXIVYERDIAN<br>Sample Output</p>
+<p>1<br>3<br>0<br>Source</p>
+<p>BAPC 2006 Qualification</p>
+<p><font color="#FF0000" size="4"><br>题解：一道KMP模板题，通过这道题可以很好地理解KMP<br>KMP很重要的一点就是原字符串的下标i永不回退，回退的是匹配的字符串的下标j<br>还有一点重要的的是next[k]数组，next[k]表示的是下标为k之前的子字符串中最长的前缀后缀相同的长度，那next数组有什么用那，用处就是在匹配字符失败的时候直接移动j来进行下一次匹配。<br>在这里推荐几篇能够讲清楚kmp的文章：<br>从头到尾彻底理解KMP：<a href="http://blog.csdn.net/v_july_v/article/details/7041827" target="_blank" rel="external">http://blog.csdn.net/v_july_v/article/details/7041827</a><br>KMPnext数组详解：<a href="http://www.cnblogs.com/tangzhengyue/p/4315393.html" target="_blank" rel="external">http://www.cnblogs.com/tangzhengyue/p/4315393.html</a><br>接下来是AC code(不过跑得好慢):</font><br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.io.*;  </div><div class="line"><span class="keyword">import</span> java.util.*;  </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;  </div><div class="line">  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;  </div><div class="line">        Scanner sc=<span class="keyword">new</span> Scanner(System.in);  </div><div class="line">        <span class="keyword">int</span> n=sc.nextInt();  </div><div class="line">        sc.nextLine();  </div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> o=<span class="number">1</span>;o&lt;=n;o++)&#123;  </div><div class="line">            String pat=sc.nextLine();  </div><div class="line">            String txt=sc.nextLine();  </div><div class="line">            <span class="keyword">int</span> count=<span class="number">0</span>;  </div><div class="line">            <span class="keyword">int</span>[]next=makeNext(pat);<span class="comment">//创建匹配字符串的next数组  </span></div><div class="line">            <span class="keyword">int</span> t_length=txt.length();  </div><div class="line">            <span class="keyword">int</span> p_length=pat.length();  </div><div class="line">            <span class="keyword">int</span> j=<span class="number">0</span>;  </div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;t_length;i++)&#123;  </div><div class="line">                <span class="keyword">while</span>(j&gt;<span class="number">0</span>&amp;&amp;txt.charAt(i)!=pat.charAt(j))&#123;  </div><div class="line">                    j=next[j];<span class="comment">//当匹配失败时，回退j  </span></div><div class="line">                &#125;  </div><div class="line">                <span class="keyword">if</span>(txt.charAt(i)==pat.charAt(j))&#123;  </div><div class="line">                    j++;<span class="comment">//如果当前字符匹配，j++往后找  </span></div><div class="line">                &#125;  </div><div class="line">                <span class="keyword">if</span>(j==p_length)&#123;  </div><div class="line">                    count++;  </div><div class="line">                    j=next[j];<span class="comment">//找到了，count++过以后将当作没有匹配到，回退j  </span></div><div class="line">                &#125;  </div><div class="line">            &#125;  </div><div class="line">            System.out.println(count);  </div><div class="line">        &#125;  </div><div class="line">  </div><div class="line">    &#125;  </div><div class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">int</span>[] makeNext(String s)&#123;  </div><div class="line">        <span class="keyword">int</span> s_length=s.length();  </div><div class="line">        <span class="keyword">int</span>[] next=<span class="keyword">new</span> <span class="keyword">int</span> [s_length+<span class="number">1</span>];  </div><div class="line">        <span class="keyword">int</span> j=<span class="number">0</span>;  </div><div class="line">        <span class="keyword">int</span> k=-<span class="number">1</span>;  </div><div class="line">        next[<span class="number">0</span>]=-<span class="number">1</span>;  </div><div class="line">        <span class="keyword">while</span>(j&lt;s_length)&#123;  </div><div class="line">            <span class="keyword">if</span>(k==-<span class="number">1</span>||s.charAt(j)==s.charAt(k))&#123;  </div><div class="line">                next[++j]=++k;  </div><div class="line">            &#125;  </div><div class="line">            <span class="keyword">else</span>  </div><div class="line">                k=next[k];  </div><div class="line">        &#125;  </div><div class="line">        <span class="keyword">return</span> next;  </div><div class="line">    &#125;  </div><div class="line">  </div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/24/Exams-Codeforces-Round-377-D-贪心-二分/" rel="next" title="Exams Codeforces Round#377-D(贪心+二分)">
+                <i class="fa fa-chevron-left"></i> Exams Codeforces Round#377-D(贪心+二分)
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/24/I-m-here-waiting-for-Your-touch/" rel="prev" title="I'm here waiting for Your touch">
+                I'm here waiting for Your touch <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ofj2afd76.bkt.clouddn.com/pixiv51671658.jpg"
+               alt="陈续缘" />
+          <p class="site-author-name" itemprop="name">陈续缘</p>
+          <p class="site-description motion-element" itemprop="description">如果你竟然 别来无恙 只好怪时光 还不够漫长</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">17</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">陈续缘</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

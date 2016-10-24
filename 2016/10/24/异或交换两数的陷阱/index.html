@@ -1,0 +1,558 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.2" />
+
+
+
+
+
+
+<meta name="description" content="以下是错误代码：">
+<meta property="og:type" content="article">
+<meta property="og:title" content="异或交换两数的陷阱">
+<meta property="og:url" content="http://yoursite.com/2016/10/24/异或交换两数的陷阱/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="以下是错误代码：">
+<meta property="og:updated_time" content="2016-10-24T03:34:06.676Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="异或交换两数的陷阱">
+<meta name="twitter:description" content="以下是错误代码：">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Pisces',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/10/24/异或交换两数的陷阱/"/>
+
+
+  <title> 异或交换两数的陷阱 | Hexo </title>
+</head>
+
+<body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="//schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">Hexo</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule" rel="section">
+            
+            日程
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="//schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                异或交换两数的陷阱
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-24T11:23:53+08:00" content="2016-10-24">
+              2016-10-24
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <font color="#6495ED" size="6">以下是错误代码：</font><br><a id="more"></a><br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div></pre></td><td class="code"><pre><div class="line">import java.io.*;  </div><div class="line">import java.util.*;  </div><div class="line">  </div><div class="line">public class Main &#123;  </div><div class="line">  </div><div class="line">    public static void main(String[] args) &#123;  </div><div class="line">        long []shu=&#123;1,2,4,3,5,2,432,5,32,41,2&#125;;  </div><div class="line">        quickSort(shu,0,shu.length-1);  </div><div class="line">        for(long a:shu)&#123;  </div><div class="line">            System.out.print(a+" ");  </div><div class="line">        &#125;  </div><div class="line">          </div><div class="line">    &#125;  </div><div class="line">    public static void swap(long []shu,int a,int b)&#123;  </div><div class="line">        /*long temp=shu[a]; </div><div class="line">        shu[a]=shu[b]; </div><div class="line">        shu[b]=temp;*/  </div><div class="line">        shu[a]=shu[a]^shu[b];  </div><div class="line">        shu[b]=shu[b]^shu[a];  </div><div class="line">        shu[a]=shu[a]^shu[b];  </div><div class="line">        &#125;  </div><div class="line">    public static int partition (long[]shu,int begin,int end)&#123;  </div><div class="line">        long pivot =shu[end];  </div><div class="line">        int storeindex=begin;  </div><div class="line">        for(int i=begin;i&lt;end;i++)&#123;  </div><div class="line">            if(shu[i]&lt;pivot)&#123;  </div><div class="line">                swap(shu,i,storeindex);  </div><div class="line">                storeindex++;  </div><div class="line">            &#125;  </div><div class="line">          </div><div class="line">        &#125;  </div><div class="line">        swap(shu,storeindex,end);  </div><div class="line">        return storeindex;  </div><div class="line">    &#125;  </div><div class="line">          </div><div class="line">    public static void quickSort(long []shu,int begin,int end)&#123;  </div><div class="line">        if(begin&gt;=end)&#123;  </div><div class="line">            return;  </div><div class="line">        &#125;  </div><div class="line">        else&#123;  </div><div class="line">            int mid =partition(shu,begin,end);  </div><div class="line">            quickSort(shu,begin,mid-1);  </div><div class="line">            quickSort(shu,mid+1,end);  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line">  </div><div class="line">&#125;  </div><div class="line">```&lt;font color=#008000&gt;</div><div class="line">output：0 2 2 0 0 4 5 0 0 0 0 </div><div class="line">为什么会这样那，因为有重复的值，在交换时出现了相当于：</div><div class="line"></div><div class="line">a=a^a;</div><div class="line"></div><div class="line">a=a^a;</div><div class="line"></div><div class="line">a=a^a;</div><div class="line"></div><div class="line">的操作，结果就变成0了。</div><div class="line"></div><div class="line"></div><div class="line"></div><div class="line">以下是正确食用方法：&lt;/font&gt;</div><div class="line"></div><div class="line">```java</div><div class="line">import java.io.*;  </div><div class="line">import java.util.*;  </div><div class="line">  </div><div class="line">public class Main &#123;  </div><div class="line">  </div><div class="line">    public static void main(String[] args) &#123;  </div><div class="line">        long []shu=&#123;1,2,4,3,5,2,432,5,32,41,2&#125;;  </div><div class="line">        quickSort(shu,0,shu.length-1);  </div><div class="line">        for(long a:shu)&#123;  </div><div class="line">            System.out.print(a+" ");  </div><div class="line">        &#125;  </div><div class="line">          </div><div class="line">    &#125;  </div><div class="line">    public static void swap(long []shu,int a,int b)&#123;  </div><div class="line">        long temp=shu[a];  </div><div class="line">        shu[a]=shu[b];  </div><div class="line">        shu[b]=temp;  </div><div class="line">        /*shu[a]=shu[a]^shu[b]; </div><div class="line">        shu[b]=shu[b]^shu[a]; </div><div class="line">        shu[a]=shu[a]^shu[b];*/  </div><div class="line">        &#125;  </div><div class="line">    public static int partition (long[]shu,int begin,int end)&#123;  </div><div class="line">        long pivot =shu[end];  </div><div class="line">        int storeindex=begin;  </div><div class="line">        for(int i=begin;i&lt;end;i++)&#123;  </div><div class="line">            if(shu[i]&lt;pivot)&#123;  </div><div class="line">                swap(shu,i,storeindex);  </div><div class="line">                storeindex++;  </div><div class="line">            &#125;  </div><div class="line">          </div><div class="line">        &#125;  </div><div class="line">        swap(shu,storeindex,end);  </div><div class="line">        return storeindex;  </div><div class="line">    &#125;  </div><div class="line">          </div><div class="line">    public static void quickSort(long []shu,int begin,int end)&#123;  </div><div class="line">        if(begin&gt;=end)&#123;  </div><div class="line">            return;  </div><div class="line">        &#125;  </div><div class="line">        else&#123;  </div><div class="line">            int mid =partition(shu,begin,end);  </div><div class="line">            quickSort(shu,begin,mid-1);  </div><div class="line">            quickSort(shu,mid+1,end);  </div><div class="line">        &#125;  </div><div class="line">    &#125;  </div><div class="line">  </div><div class="line">&#125;</div></pre></td></tr></table></figure><br><br><font color="#008000">output:1 2 2 2 3 4 5 5 32 41 432 </font>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/10/24/Anatoly-and-Cockroaches-Codeforces-Round-373-B/" rel="next" title="Anatoly and Cockroaches Codeforces Round#373-B">
+                <i class="fa fa-chevron-left"></i> Anatoly and Cockroaches Codeforces Round#373-B
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/10/24/Passwords-Codeforces-Round-374-B/" rel="prev" title="Passwords Codeforces Round#374-B">
+                Passwords Codeforces Round#374-B <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="//schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="http://ofj2afd76.bkt.clouddn.com/pixiv51671658.jpg"
+               alt="陈续缘" />
+          <p class="site-author-name" itemprop="name">陈续缘</p>
+          <p class="site-description motion-element" itemprop="description">如果你竟然 别来无恙 只好怪时光 还不够漫长</p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">17</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">陈续缘</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Pisces
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.0.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.0.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.2"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+
+</body>
+</html>

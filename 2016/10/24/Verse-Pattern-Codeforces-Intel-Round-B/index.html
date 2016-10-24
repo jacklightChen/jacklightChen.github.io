@@ -84,16 +84,19 @@
 
 
 
-<meta name="description" content="A water problemTime Limit: 5000/2500 MS (Java/Others)    Memory Limit: 65536/65536 K (Java/Others)Problem DescriptionTwo planets named Haha and Xixi in the universe and they were created with the univ">
+<meta name="description" content="B. Verse Pattern
+time limit per test 1 secondmemory limit per test 256 megabytesinput standard inputoutput standard outputYou are given a text consisting of n lines.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hdu5832-A water problem-续缘之路">
-<meta property="og:url" content="http://yoursite.com/2016/10/24/hdu5832-A water problem-续缘之路/index.html">
+<meta property="og:title" content="Verse Pattern Codeforces Intel Round-B">
+<meta property="og:url" content="http://yoursite.com/2016/10/24/Verse-Pattern-Codeforces-Intel-Round-B/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="A water problemTime Limit: 5000/2500 MS (Java/Others)    Memory Limit: 65536/65536 K (Java/Others)Problem DescriptionTwo planets named Haha and Xixi in the universe and they were created with the univ">
-<meta property="og:updated_time" content="2016-10-24T03:05:51.787Z">
+<meta property="og:description" content="B. Verse Pattern
+time limit per test 1 secondmemory limit per test 256 megabytesinput standard inputoutput standard outputYou are given a text consisting of n lines.">
+<meta property="og:updated_time" content="2016-10-24T03:36:30.198Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hdu5832-A water problem-续缘之路">
-<meta name="twitter:description" content="A water problemTime Limit: 5000/2500 MS (Java/Others)    Memory Limit: 65536/65536 K (Java/Others)Problem DescriptionTwo planets named Haha and Xixi in the universe and they were created with the univ">
+<meta name="twitter:title" content="Verse Pattern Codeforces Intel Round-B">
+<meta name="twitter:description" content="B. Verse Pattern
+time limit per test 1 secondmemory limit per test 256 megabytesinput standard inputoutput standard outputYou are given a text consisting of n lines.">
 
 
 
@@ -114,10 +117,10 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/10/24/hdu5832-A water problem-续缘之路/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/10/24/Verse-Pattern-Codeforces-Intel-Round-B/"/>
 
 
-  <title> hdu5832-A water problem-续缘之路 | Hexo </title>
+  <title> Verse Pattern Codeforces Intel Round-B | Hexo </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -239,7 +242,7 @@
             
             
               
-                hdu5832-A water problem-续缘之路
+                Verse Pattern Codeforces Intel Round-B
               
             
           </h1>
@@ -251,7 +254,7 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-24T10:36:43+08:00" content="2016-10-24">
+            <time itemprop="dateCreated" datetime="2016-10-24T11:25:09+08:00" content="2016-10-24">
               2016-10-24
             </time>
           </span>
@@ -279,9 +282,55 @@
       
 
       
-        <font color="#6495ED" size="6">A water problem</font><br><font color="#008000">Time Limit: 5000/2500 MS (Java/Others)    Memory Limit: 65536/65536 K (Java/Others)</font><br>Problem Description<br>Two planets named Haha and Xixi in the universe and they were created with the universe beginning.<br><br><a id="more"></a><br>There is 73 days in Xixi a year and 137 days in Haha a year.<br><br>Now you know the days N after Big Bang, you need to answer whether it is the first day in a year about the two planets.<br>Input<br>There are several test cases(about 5 huge test cases).<br><br>For each test, we have a line with an only integer N(0≤N), the length of N is up to 10000000.<br><br><br>Output<br>For the i-th test case, output Case #i: , then output “YES” or “NO” for the answer.<br><br><br>Sample Input<br>10001<br>0<br>333<br><br><br>Sample Output<br>Case #1: YES<br>Case #2: YES<br>Case #3: NO<br><br><font color="#FF0000" size="4">比赛的时候先用java的BIGInteger水一发结果MLE了<br>然后再用java写一个模拟取余<br>又MLE了。。。<br>然后发现此题没有用java过的，顿时不开森。（对java党如此不友好=。=）<br>附上C++AC代码</font>
+        <p><font color="#6495ED" size="6">B. Verse Pattern</font></p>
+<p><font color="#008000">time limit per test 1 second<br>memory limit per test 256 megabytes<br>input standard input<br>output standard output</font><br>You are given a text consisting of n lines.<a id="more"></a> Each line contains some space-separated words, consisting of lowercase English letters.</p>
+<p>We define a syllable as a string that contains exactly one vowel any arbitrary number (possibly none) of consonants. In English alphabet following letters are considered to be vowels: ‘a’, ‘e’, ‘i’, ‘o’, ‘u’ and ‘y’.<br>Each word of the text that contains at least one vowel can be divided into syllables. Each character should be a part of exactly one syllable. For example, the word “mamma” can be divided into syllables as “ma” and “mma”, “mam” and “ma”, and “mamm” and “a”. Words that consist of only consonants should be ignored.<br>The verse patterns for the given text is a sequence of n integers p1, p2, …, pn. Text matches the given verse pattern if for each i from 1to n one can divide words of the i-th line in syllables in such a way that the total number of syllables is equal to pi.<br>You are given the text and the verse pattern. Check, if the given text matches the given verse pattern.<br>Input<br>The first line of the input contains a single integer n (1 ≤ n ≤ 100) — the number of lines in the text.<br>The second line contains integers p1, …, pn (0 ≤ pi ≤ 100) — the verse pattern.<br>Next n lines contain the text itself. Text consists of lowercase English letters and spaces. It’s guaranteed that all lines are non-empty, each line starts and ends with a letter and words are separated by exactly one space. The length of each line doesn’t exceed 100characters.<br>Output<br>If the given text matches the given verse pattern, then print “YES” (without quotes) in the only line of the output. Otherwise, print “NO” (without quotes).<br>Examples<br>input<br>3<br>2 2 3<br>intel<br>code<br>ch allenge<br>output<br>YES<br>input<br>4<br>1 2 3 1<br>a<br>bcdefghi<br>jklmnopqrstu<br>vwxyz<br>output<br>NO<br>input<br>4<br>13 11 15 15<br>to be or not to be that is the question<br>whether tis nobler in the mind to suffer<br>the slings and arrows of outrageous fortune<br>or to take arms against a sea of troubles<br>output<br>YES<br>Note<br>In the first sample, one can split words into syllables in the following way:<br>in-tel<br>co-de<br>ch al-len-ge<br>Since the word “ch” in the third line doesn’t contain vowels, we can ignore it. As the result we get 2 syllabels in first two lines and 3syllables in the third one.</p>
+<p><font color="#FF0000" size="4">统计一下元音字母个数即可，注意一个syllable只能有一个元音，所以数量相等就能通过，而不等就不行，水题</font><br>code：</p>
+<pre><code class="java"><span class="keyword">import</span> java.io.*;  
+<span class="keyword">import</span> java.util.*;  
 
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">char</span> shu[<span class="number">10000000</span>];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line"><span class="keyword">int</span> cs=<span class="number">0</span>;</div><div class="line"><span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%s"</span>,&amp;shu)!=EOF)</div><div class="line">&#123;</div><div class="line">cs++;</div><div class="line"><span class="keyword">long</span> sum=<span class="number">0</span>;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="built_in">strlen</span>(shu);i++)</div><div class="line">&#123;</div><div class="line">sum=(sum*<span class="number">10</span>+shu[i]-<span class="string">'0'</span>)%<span class="number">10001</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">printf</span>(<span class="string">"Case #%d: "</span>,cs);</div><div class="line"><span class="keyword">if</span>(sum==<span class="number">0</span>)</div><div class="line"><span class="built_in">printf</span>(<span class="string">"YES\n"</span>);</div><div class="line"><span class="keyword">else</span></div><div class="line"><span class="built_in">printf</span>(<span class="string">"NO\n"</span>);</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>{  
+
+    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{  
+    Scanner sc=<span class="keyword">new</span> Scanner(System.in);  
+    <span class="keyword">while</span>(sc.hasNext()){  
+        <span class="keyword">int</span> n=sc.nextInt();  
+        <span class="keyword">int</span>[]jl=<span class="keyword">new</span> <span class="keyword">int</span>[n+<span class="number">10</span>];  
+        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++){  
+            jl[i]=sc.nextInt();  
+        }  
+        sc.nextLine();  
+        <span class="keyword">boolean</span> flag=<span class="keyword">true</span>;  
+        String []s=<span class="keyword">new</span> String[n+<span class="number">10</span>];  
+        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;n;i++){  
+            s[i]=sc.nextLine();  
+            <span class="comment">//System.out.println(s[i]);  </span>
+            <span class="comment">//System.out.println(s[i]);  </span>
+            <span class="keyword">int</span> js=<span class="number">0</span>;  
+            <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;s[i].length();j++){  
+                <span class="keyword">if</span>((s[i].charAt(j)==<span class="string">'a'</span>||s[i].charAt(j)==<span class="string">'e'</span>||s[i].charAt(j)==<span class="string">'i'</span>||s[i].charAt(j)==<span class="string">'o'</span>||s[i].charAt(j)==<span class="string">'u'</span>||s[i].charAt(j)==<span class="string">'y'</span>)){  
+                    js++;  
+                }  
+
+            }  
+            <span class="keyword">if</span>(js!=jl[i]){  
+                flag=<span class="keyword">false</span>;  
+
+            }  
+            <span class="comment">//System.out.println(js);  </span>
+        }  
+        <span class="keyword">if</span>(flag==<span class="keyword">true</span>){  
+            System.out.println(<span class="string">"YES"</span>);  
+        }  
+        <span class="keyword">else</span>  
+            System.out.println(<span class="string">"NO"</span>);  
+    }  
+
+    }  
+
+}
+</code></pre>
+
       
     </div>
 
@@ -306,12 +355,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/10/24/Broken-Clock-Codeforces-Intel-Round-A/" rel="next" title="Broken Clock Codeforces Intel Round-A">
+                <i class="fa fa-chevron-left"></i> Broken Clock Codeforces Intel Round-A
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/10/24/hdu5842-Lweb-and-String-续缘之路/" rel="prev" title="hdu5842-Lweb and String-续缘之路">
-                hdu5842-Lweb and String-续缘之路 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/10/24/The-New-Year-Meeting-Friends-Codeforces-Round-375-A/" rel="prev" title="The New Year: Meeting Friends Codeforces Round#375-A">
+                The New Year: Meeting Friends Codeforces Round#375-A <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

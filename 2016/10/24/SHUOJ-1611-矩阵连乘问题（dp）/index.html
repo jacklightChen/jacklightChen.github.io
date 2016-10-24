@@ -84,16 +84,19 @@
 
 
 
-<meta name="description" content="A water problemTime Limit: 5000/2500 MS (Java/Others)    Memory Limit: 65536/65536 K (Java/Others)Problem DescriptionTwo planets named Haha and Xixi in the universe and they were created with the univ">
+<meta name="description" content="矩阵连乘问题
+Description给定n个矩阵A1，A2，…，An，其中，Ai与Aj+1是可乘的，i=1，2，…，n-1。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hdu5832-A water problem-续缘之路">
-<meta property="og:url" content="http://yoursite.com/2016/10/24/hdu5832-A water problem-续缘之路/index.html">
+<meta property="og:title" content="SHUOJ 1611 矩阵连乘问题（dp）">
+<meta property="og:url" content="http://yoursite.com/2016/10/24/SHUOJ-1611-矩阵连乘问题（dp）/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="A water problemTime Limit: 5000/2500 MS (Java/Others)    Memory Limit: 65536/65536 K (Java/Others)Problem DescriptionTwo planets named Haha and Xixi in the universe and they were created with the univ">
-<meta property="og:updated_time" content="2016-10-24T03:05:51.787Z">
+<meta property="og:description" content="矩阵连乘问题
+Description给定n个矩阵A1，A2，…，An，其中，Ai与Aj+1是可乘的，i=1，2，…，n-1。">
+<meta property="og:updated_time" content="2016-10-24T04:44:50.896Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hdu5832-A water problem-续缘之路">
-<meta name="twitter:description" content="A water problemTime Limit: 5000/2500 MS (Java/Others)    Memory Limit: 65536/65536 K (Java/Others)Problem DescriptionTwo planets named Haha and Xixi in the universe and they were created with the univ">
+<meta name="twitter:title" content="SHUOJ 1611 矩阵连乘问题（dp）">
+<meta name="twitter:description" content="矩阵连乘问题
+Description给定n个矩阵A1，A2，…，An，其中，Ai与Aj+1是可乘的，i=1，2，…，n-1。">
 
 
 
@@ -114,10 +117,10 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/10/24/hdu5832-A water problem-续缘之路/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/10/24/SHUOJ-1611-矩阵连乘问题（dp）/"/>
 
 
-  <title> hdu5832-A water problem-续缘之路 | Hexo </title>
+  <title> SHUOJ 1611 矩阵连乘问题（dp） | Hexo </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -239,7 +242,7 @@
             
             
               
-                hdu5832-A water problem-续缘之路
+                SHUOJ 1611 矩阵连乘问题（dp）
               
             
           </h1>
@@ -251,7 +254,7 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-24T10:36:43+08:00" content="2016-10-24">
+            <time itemprop="dateCreated" datetime="2016-10-24T11:26:12+08:00" content="2016-10-24">
               2016-10-24
             </time>
           </span>
@@ -279,9 +282,88 @@
       
 
       
-        <font color="#6495ED" size="6">A water problem</font><br><font color="#008000">Time Limit: 5000/2500 MS (Java/Others)    Memory Limit: 65536/65536 K (Java/Others)</font><br>Problem Description<br>Two planets named Haha and Xixi in the universe and they were created with the universe beginning.<br><br><a id="more"></a><br>There is 73 days in Xixi a year and 137 days in Haha a year.<br><br>Now you know the days N after Big Bang, you need to answer whether it is the first day in a year about the two planets.<br>Input<br>There are several test cases(about 5 huge test cases).<br><br>For each test, we have a line with an only integer N(0≤N), the length of N is up to 10000000.<br><br><br>Output<br>For the i-th test case, output Case #i: , then output “YES” or “NO” for the answer.<br><br><br>Sample Input<br>10001<br>0<br>333<br><br><br>Sample Output<br>Case #1: YES<br>Case #2: YES<br>Case #3: NO<br><br><font color="#FF0000" size="4">比赛的时候先用java的BIGInteger水一发结果MLE了<br>然后再用java写一个模拟取余<br>又MLE了。。。<br>然后发现此题没有用java过的，顿时不开森。（对java党如此不友好=。=）<br>附上C++AC代码</font>
+        <p><font color="#6495ED" size="6">矩阵连乘问题</font></p>
+<p><font color="#008000">Description</font><br>给定n个矩阵A1，A2，…，An，其中，Ai与Aj+1是可乘的，i=1，2，…，n-1。<br><a id="more"></a><br>你的任务是要确定矩阵连乘的运算次序，使计算这n个矩阵的连乘积A1A2…An时总的元素乘法次数达到最少。</p>
+<p>例如：3个矩阵A1，A2，A3，阶分别为10×100、100×5、5×50，计算连乘积A1A2A3时按（A1A2）A3所需的元素乘法次数达到最少，为7500次。</p>
+<p>Input<br>测试数据有若干组，每组测试数据有2行。</p>
+<p>每组测试数据的第1行是一个整数n，（0&lt;n&lt;20），第2行是n+1个正整数p0、p1、p2、…、pn，这些整数不超过100，相邻两个整数之间空一格，他们表示n个矩阵A1，A2，…，An，的阶pi-1´pi，i=1，2，…，n。</p>
+<p>输入直到文件结束。</p>
+<p>Output<br>对输入中的每组测试数据，输出2行。先在一行上输出“Case #”，其中“#”是测试数据的组号（从1开始），再在第2行上输出计算这n个矩阵的连乘积A1A2…An时最少的总的元素乘法次数，再空一格，接着在同一行上输出矩阵连乘的添括号形式。</p>
+<p>注意：最外层括号应去掉。</p>
+<p>Sample Input<br>310 100 5 50450 10 40 30 5<br>Sample Output<br> Case 1<br>7500 (A1A2)A3<br>Case 2<br>10500 A1(A2(A3A4))</p>
+<p><font color="#FF0000" size="4">题解：<br>现在的我果然还只是个蒟蒻，dp一片混沌。。希望半年后我回头看时能豁然开朗吧0.0<br>强推<a href="http://m.blog.csdn.net/article/details?id=8030012" target="_blank" rel="external">http://m.blog.csdn.net/article/details?id=8030012</a><br>dp最重要的是递推关系，递推关系见链接内：<br>对不起这个公式我是推不出来的。。我照着别人的公式推还推了半天。。<br>那么跨过了dp递推公式的难关，这个题还有一个难点是如何打印括号，<br>这里是使用递推进行括号匹配的。<br>（注意如果大于一个矩阵的话，递推公式会把最前面和最后面的括号也打出来，不符合题意，需要自己删除）<br>附上渣渣调了半天才过的AC Code：</font></p>
+<pre><code class="java"><span class="keyword">import</span> java.io.*;  
+<span class="keyword">import</span> java.util.*;  
+<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>{  
+<span class="keyword">static</span> <span class="keyword">int</span> shu[];  
+<span class="keyword">static</span> <span class="keyword">int</span> dp[][];  
+<span class="keyword">static</span> <span class="keyword">int</span> jl[][];  
+<span class="keyword">static</span> <span class="keyword">int</span> n;  
+<span class="keyword">static</span> StringBuilder s;  
+    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{  
+        Scanner sc=<span class="keyword">new</span> Scanner(System.in);  
+        <span class="keyword">int</span> r=<span class="number">0</span>;  
+        <span class="keyword">while</span>(sc.hasNext()){  
+            r++;  
+            System.out.println(<span class="string">"Case "</span>+r);  
+            n=sc.nextInt();  
+            s=<span class="keyword">new</span> StringBuilder();  
+            <span class="keyword">int</span> k=n+<span class="number">1</span>;  
+            dp=<span class="keyword">new</span> <span class="keyword">int</span>[n+<span class="number">1</span>][n+<span class="number">1</span>];  
+            jl=<span class="keyword">new</span> <span class="keyword">int</span>[n+<span class="number">1</span>][n+<span class="number">1</span>];  
+            shu=<span class="keyword">new</span> <span class="keyword">int</span>[k];  
+            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;k;i++){  
+                shu[i]=sc.nextInt();  
+            }  
+            dp();  
+            <span class="comment">/*System.out.println(n); 
+            for(int i=0;i&lt;n+1;i++){ 
+                for(int j=0;j&lt;n+1;j++) 
+                { 
+                    System.out.print(dp[i][j]); 
+                } 
+                System.out.println('\n'); 
+                }*/</span>  
+            printBrackets(<span class="number">1</span>,n);<span class="comment">//根据jl矩阵递归将括号结果保存在s中  </span>
+            System.out.print(dp[<span class="number">1</span>][n]+<span class="string">" "</span>);  
+            <span class="comment">//判断不是只有一个矩阵  </span>
+            <span class="keyword">if</span>(s.charAt(<span class="number">0</span>)==<span class="string">'('</span>){  
+            s.deleteCharAt(<span class="number">0</span>);  
+            s.deleteCharAt(s.length()-<span class="number">1</span>);}  
+            System.out.println(s);  
+            }  
+            }  
+   <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">dp</span><span class="params">()</span></span>{  
+       <span class="keyword">int</span> j;  
+       <span class="keyword">for</span>(<span class="keyword">int</span> l=<span class="number">2</span>;l&lt;=n;l++){    <span class="comment">// 枚举矩阵链长度  </span>
 
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">char</span> shu[<span class="number">10000000</span>];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line"><span class="keyword">int</span> cs=<span class="number">0</span>;</div><div class="line"><span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%s"</span>,&amp;shu)!=EOF)</div><div class="line">&#123;</div><div class="line">cs++;</div><div class="line"><span class="keyword">long</span> sum=<span class="number">0</span>;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="built_in">strlen</span>(shu);i++)</div><div class="line">&#123;</div><div class="line">sum=(sum*<span class="number">10</span>+shu[i]-<span class="string">'0'</span>)%<span class="number">10001</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">printf</span>(<span class="string">"Case #%d: "</span>,cs);</div><div class="line"><span class="keyword">if</span>(sum==<span class="number">0</span>)</div><div class="line"><span class="built_in">printf</span>(<span class="string">"YES\n"</span>);</div><div class="line"><span class="keyword">else</span></div><div class="line"><span class="built_in">printf</span>(<span class="string">"NO\n"</span>);</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+           <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n-l+<span class="number">1</span>;i++){    <span class="comment">//  枚举矩阵链的起点  </span>
+               j=i+l-<span class="number">1</span>;  
+               dp[i][j]=Integer.MAX_VALUE;  
+               <span class="keyword">for</span>(<span class="keyword">int</span> k=i;k&lt;=j-<span class="number">1</span>;k++){  <span class="comment">//枚举断点  </span>
+                   <span class="keyword">int</span> cur=dp[i][k]+dp[k+<span class="number">1</span>][j]+shu[i-<span class="number">1</span>]*shu[k]*shu[j];<span class="comment">//递推  </span>
+                   <span class="keyword">if</span>(cur&lt;dp[i][j]){  
+                       dp[i][j]=cur;  
+                       jl[i][j]=k;  
+               }  
+           }  
+       }  
+   }  
+   }  
+   <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">printBrackets</span><span class="params">(<span class="keyword">int</span> i,<span class="keyword">int</span> j)</span></span>{  
+       <span class="keyword">if</span>(i==j){  
+           s.append(<span class="string">"A"</span>+i);  
+       }  
+       <span class="keyword">else</span>{  
+           s.append(<span class="string">"("</span>);  
+           printBrackets(i,jl[i][j]);  
+           printBrackets(jl[i][j]+<span class="number">1</span>,j);  
+           s.append(<span class="string">")"</span>);  
+       }  
+   }  
+}
+</code></pre>
+
       
     </div>
 
@@ -306,12 +388,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/10/24/SHUOJ-2065-Jazz-Charles的Dog数列-矩阵快速幂/" rel="next" title="SHUOJ 2065 Jazz_Charles的Dog数列(矩阵快速幂)">
+                <i class="fa fa-chevron-left"></i> SHUOJ 2065 Jazz_Charles的Dog数列(矩阵快速幂)
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/10/24/hdu5842-Lweb-and-String-续缘之路/" rel="prev" title="hdu5842-Lweb and String-续缘之路">
-                hdu5842-Lweb and String-续缘之路 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/10/24/Sanatorium-Codeforces-Round-377-C-逻辑/" rel="prev" title="Sanatorium Codeforces Round#377-C(逻辑)">
+                Sanatorium Codeforces Round#377-C(逻辑) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

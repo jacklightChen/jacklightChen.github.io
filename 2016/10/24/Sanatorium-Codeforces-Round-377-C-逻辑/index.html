@@ -84,16 +84,19 @@
 
 
 
-<meta name="description" content="A water problemTime Limit: 5000/2500 MS (Java/Others)    Memory Limit: 65536/65536 K (Java/Others)Problem DescriptionTwo planets named Haha and Xixi in the universe and they were created with the univ">
+<meta name="description" content="C. Sanatorium
+time limit per test 1 secondmemory limit per test 256 megabytesinput standard inputoutput standard outputVasiliy spent his vacation in a sanatorium, came back and found that he completel">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hdu5832-A water problem-续缘之路">
-<meta property="og:url" content="http://yoursite.com/2016/10/24/hdu5832-A water problem-续缘之路/index.html">
+<meta property="og:title" content="Sanatorium Codeforces Round#377-C(逻辑)">
+<meta property="og:url" content="http://yoursite.com/2016/10/24/Sanatorium-Codeforces-Round-377-C-逻辑/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="A water problemTime Limit: 5000/2500 MS (Java/Others)    Memory Limit: 65536/65536 K (Java/Others)Problem DescriptionTwo planets named Haha and Xixi in the universe and they were created with the univ">
-<meta property="og:updated_time" content="2016-10-24T03:05:51.787Z">
+<meta property="og:description" content="C. Sanatorium
+time limit per test 1 secondmemory limit per test 256 megabytesinput standard inputoutput standard outputVasiliy spent his vacation in a sanatorium, came back and found that he completel">
+<meta property="og:updated_time" content="2016-10-24T04:44:45.991Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hdu5832-A water problem-续缘之路">
-<meta name="twitter:description" content="A water problemTime Limit: 5000/2500 MS (Java/Others)    Memory Limit: 65536/65536 K (Java/Others)Problem DescriptionTwo planets named Haha and Xixi in the universe and they were created with the univ">
+<meta name="twitter:title" content="Sanatorium Codeforces Round#377-C(逻辑)">
+<meta name="twitter:description" content="C. Sanatorium
+time limit per test 1 secondmemory limit per test 256 megabytesinput standard inputoutput standard outputVasiliy spent his vacation in a sanatorium, came back and found that he completel">
 
 
 
@@ -114,10 +117,10 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/10/24/hdu5832-A water problem-续缘之路/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/10/24/Sanatorium-Codeforces-Round-377-C-逻辑/"/>
 
 
-  <title> hdu5832-A water problem-续缘之路 | Hexo </title>
+  <title> Sanatorium Codeforces Round#377-C(逻辑) | Hexo </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -239,7 +242,7 @@
             
             
               
-                hdu5832-A water problem-续缘之路
+                Sanatorium Codeforces Round#377-C(逻辑)
               
             
           </h1>
@@ -251,7 +254,7 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-24T10:36:43+08:00" content="2016-10-24">
+            <time itemprop="dateCreated" datetime="2016-10-24T11:26:24+08:00" content="2016-10-24">
               2016-10-24
             </time>
           </span>
@@ -279,9 +282,65 @@
       
 
       
-        <font color="#6495ED" size="6">A water problem</font><br><font color="#008000">Time Limit: 5000/2500 MS (Java/Others)    Memory Limit: 65536/65536 K (Java/Others)</font><br>Problem Description<br>Two planets named Haha and Xixi in the universe and they were created with the universe beginning.<br><br><a id="more"></a><br>There is 73 days in Xixi a year and 137 days in Haha a year.<br><br>Now you know the days N after Big Bang, you need to answer whether it is the first day in a year about the two planets.<br>Input<br>There are several test cases(about 5 huge test cases).<br><br>For each test, we have a line with an only integer N(0≤N), the length of N is up to 10000000.<br><br><br>Output<br>For the i-th test case, output Case #i: , then output “YES” or “NO” for the answer.<br><br><br>Sample Input<br>10001<br>0<br>333<br><br><br>Sample Output<br>Case #1: YES<br>Case #2: YES<br>Case #3: NO<br><br><font color="#FF0000" size="4">比赛的时候先用java的BIGInteger水一发结果MLE了<br>然后再用java写一个模拟取余<br>又MLE了。。。<br>然后发现此题没有用java过的，顿时不开森。（对java党如此不友好=。=）<br>附上C++AC代码</font>
+        <p><font color="#6495ED" size="6">C. Sanatorium</font></p>
+<p><font color="#008000">time limit per test 1 second<br>memory limit per test 256 megabytes<br>input standard input<br>output standard output</font><br>Vasiliy spent his vacation in a sanatorium, came back and found that he completely forgot details of his vacation!<a id="more"></a></p>
+<p>Every day there was a breakfast, a dinner and a supper in a dining room of the sanatorium (of course, in this order). The only thing that Vasiliy has now is a card from the dining room contaning notes how many times he had a breakfast, a dinner and a supper (thus, the card contains three integers). Vasiliy could sometimes have missed some meal, for example, he could have had a breakfast and a supper, but a dinner, or, probably, at some days he haven’t been at the dining room at all.<br>Vasiliy doesn’t remember what was the time of the day when he arrived to sanatorium (before breakfast, before dinner, before supper or after supper), and the time when he left it (before breakfast, before dinner, before supper or after supper). So he considers any of these options. After Vasiliy arrived to the sanatorium, he was there all the time until he left. Please note, that it’s possible that Vasiliy left the sanatorium on the same day he arrived.<br>According to the notes in the card, help Vasiliy determine the minimum number of meals in the dining room that he could have missed. We shouldn’t count as missed meals on the arrival day before Vasiliy’s arrival and meals on the departure day after he left.<br>Input<br>The only line contains three integers b, d and s  — the number of breakfasts, dinners and suppers which Vasiliy had during his vacation in the sanatorium.<br>Output<br>Print single integer — the minimum possible number of meals which Vasiliy could have missed during his vacation.<br>Examples<br>input<br>3 2 1<br>output<br>1</p>
+<p>input<br>1 0 0<br>output<br>0</p>
+<p>input<br>1 1 1<br>output<br>0</p>
+<p>input<br>1000000000000000000 0 1000000000000000000<br>output<br>999999999999999999</p>
+<p>Note<br>In the first sample, Vasiliy could have missed one supper, for example, in case he have arrived before breakfast, have been in the sanatorium for two days (including the day of arrival) and then have left after breakfast on the third day.<br>In the second sample, Vasiliy could have arrived before breakfast, have had it, and immediately have left the sanatorium, not missing any meal.<br>In the third sample, Vasiliy could have been in the sanatorium for one day, not missing any meal.</p>
+<p><font color="#FF0000" size="4">题解：问的是遗漏meal数的最小次数<br>首先我们可以认为三个数中最大的是他在Sanatorium待的最长天数<br>然后开始分情况讨论 如果只有一个最大的，比如早餐，那么我们就可以认定他开始是before早餐来的，然后结束时是after早餐走的，这样能使他吃其他餐的次数和最少，而他实际吃其他餐的天数是吃早餐的天数减一(想一想就明白了)<br>如果有两个相同且最大，那么其实就是增加了一个约束条件，譬如早餐和午餐最大，那么他开始时before早餐来的，结束时侯就必须after午餐走了。<br>又譬如早餐和晚餐最大，你可以认为他开始时是before晚餐来的，结束时就必须after早餐走了，这样他实际吃其他餐的天数都是最大的天数减一。<br>最后如果三个相同，那就特判0就可以了。<br>AC code：</font></p>
+<pre><code class="java"><span class="comment">//package C;  </span>
+<span class="keyword">import</span> java.io.*;  
+<span class="keyword">import</span> java.util.*;  
+<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>{  
 
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">char</span> shu[<span class="number">10000000</span>];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line"><span class="keyword">int</span> cs=<span class="number">0</span>;</div><div class="line"><span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%s"</span>,&amp;shu)!=EOF)</div><div class="line">&#123;</div><div class="line">cs++;</div><div class="line"><span class="keyword">long</span> sum=<span class="number">0</span>;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="built_in">strlen</span>(shu);i++)</div><div class="line">&#123;</div><div class="line">sum=(sum*<span class="number">10</span>+shu[i]-<span class="string">'0'</span>)%<span class="number">10001</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">printf</span>(<span class="string">"Case #%d: "</span>,cs);</div><div class="line"><span class="keyword">if</span>(sum==<span class="number">0</span>)</div><div class="line"><span class="built_in">printf</span>(<span class="string">"YES\n"</span>);</div><div class="line"><span class="keyword">else</span></div><div class="line"><span class="built_in">printf</span>(<span class="string">"NO\n"</span>);</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{  
+        Scanner sc=<span class="keyword">new</span> Scanner(System.in);  
+        <span class="keyword">while</span>(sc.hasNext()){  
+            <span class="keyword">long</span> a=sc.nextLong();  
+            <span class="keyword">long</span> b=sc.nextLong();  
+            <span class="keyword">long</span> c=sc.nextLong();  
+            <span class="keyword">long</span> jg=<span class="number">0</span>;  
+            <span class="keyword">long</span> max=a;  
+            <span class="keyword">int</span> flag=<span class="number">1</span>;  
+            <span class="keyword">if</span>(b&gt;=max){  
+                max=b;  
+                flag=<span class="number">2</span>;  
+            }  
+            <span class="keyword">if</span>(c&gt;=max){  
+                max=c;  
+                flag=<span class="number">3</span>;  
+            }  
+            <span class="keyword">if</span>(flag==<span class="number">1</span>){<span class="comment">//只有a最大  </span>
+                jg=a-<span class="number">1</span>-b+a-<span class="number">1</span>-c;  
+            }  
+            <span class="keyword">if</span>(flag==<span class="number">2</span>){  
+                <span class="keyword">if</span>(a==b){  
+                    jg=b-<span class="number">1</span>-c;<span class="comment">//a与b一样是最大  </span>
+                    }  
+                <span class="keyword">else</span>  
+                jg=b-<span class="number">1</span>-a+b-<span class="number">1</span>-c;<span class="comment">//只有b最大  </span>
+            }  
+            <span class="keyword">if</span>(flag==<span class="number">3</span>){  
+                <span class="keyword">if</span>(a==b&amp;&amp;b==c){<span class="comment">//三个一样大  </span>
+                    jg=<span class="number">0</span>;  
+                    }  
+                <span class="keyword">else</span> <span class="keyword">if</span>(a==c){<span class="comment">//a与c一样是最大  </span>
+                    jg=c-<span class="number">1</span>-b;  
+                    }  
+                <span class="keyword">else</span> <span class="keyword">if</span>(b==c){<span class="comment">//b与c一样是最大  </span>
+                    jg=c-<span class="number">1</span>-a;  
+                    }  
+                <span class="keyword">else</span>  
+                    jg=c-<span class="number">1</span>-a+c-<span class="number">1</span>-b;<span class="comment">//只有b最大  </span>
+                    }  
+            System.out.println(jg);  
+        }  
+    }  
+}
+</code></pre>
+
       
     </div>
 
@@ -306,12 +365,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/10/24/SHUOJ-1611-矩阵连乘问题（dp）/" rel="next" title="SHUOJ 1611 矩阵连乘问题（dp）">
+                <i class="fa fa-chevron-left"></i> SHUOJ 1611 矩阵连乘问题（dp）
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/10/24/hdu5842-Lweb-and-String-续缘之路/" rel="prev" title="hdu5842-Lweb and String-续缘之路">
-                hdu5842-Lweb and String-续缘之路 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/10/24/Exams-Codeforces-Round-377-D-贪心-二分/" rel="prev" title="Exams Codeforces Round#377-D(贪心+二分)">
+                Exams Codeforces Round#377-D(贪心+二分) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>

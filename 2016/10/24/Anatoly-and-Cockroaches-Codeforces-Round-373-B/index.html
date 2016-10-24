@@ -84,16 +84,19 @@
 
 
 
-<meta name="description" content="A water problemTime Limit: 5000/2500 MS (Java/Others)    Memory Limit: 65536/65536 K (Java/Others)Problem DescriptionTwo planets named Haha and Xixi in the universe and they were created with the univ">
+<meta name="description" content="B. Anatoly and Cockroaches
+time limit per test 1 secondmemory limit per test 256 megabytesinput standard inputoutput standard outputAnatoly lives in the university dorm as many other students do.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hdu5832-A water problem-续缘之路">
-<meta property="og:url" content="http://yoursite.com/2016/10/24/hdu5832-A water problem-续缘之路/index.html">
+<meta property="og:title" content="Anatoly and Cockroaches Codeforces Round#373-B">
+<meta property="og:url" content="http://yoursite.com/2016/10/24/Anatoly-and-Cockroaches-Codeforces-Round-373-B/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="A water problemTime Limit: 5000/2500 MS (Java/Others)    Memory Limit: 65536/65536 K (Java/Others)Problem DescriptionTwo planets named Haha and Xixi in the universe and they were created with the univ">
-<meta property="og:updated_time" content="2016-10-24T03:05:51.787Z">
+<meta property="og:description" content="B. Anatoly and Cockroaches
+time limit per test 1 secondmemory limit per test 256 megabytesinput standard inputoutput standard outputAnatoly lives in the university dorm as many other students do.">
+<meta property="og:updated_time" content="2016-10-24T03:22:12.948Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hdu5832-A water problem-续缘之路">
-<meta name="twitter:description" content="A water problemTime Limit: 5000/2500 MS (Java/Others)    Memory Limit: 65536/65536 K (Java/Others)Problem DescriptionTwo planets named Haha and Xixi in the universe and they were created with the univ">
+<meta name="twitter:title" content="Anatoly and Cockroaches Codeforces Round#373-B">
+<meta name="twitter:description" content="B. Anatoly and Cockroaches
+time limit per test 1 secondmemory limit per test 256 megabytesinput standard inputoutput standard outputAnatoly lives in the university dorm as many other students do.">
 
 
 
@@ -114,10 +117,10 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/10/24/hdu5832-A water problem-续缘之路/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/10/24/Anatoly-and-Cockroaches-Codeforces-Round-373-B/"/>
 
 
-  <title> hdu5832-A water problem-续缘之路 | Hexo </title>
+  <title> Anatoly and Cockroaches Codeforces Round#373-B | Hexo </title>
 </head>
 
 <body itemscope itemtype="//schema.org/WebPage" lang="zh-Hans">
@@ -239,7 +242,7 @@
             
             
               
-                hdu5832-A water problem-续缘之路
+                Anatoly and Cockroaches Codeforces Round#373-B
               
             
           </h1>
@@ -251,7 +254,7 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-10-24T10:36:43+08:00" content="2016-10-24">
+            <time itemprop="dateCreated" datetime="2016-10-24T11:18:01+08:00" content="2016-10-24">
               2016-10-24
             </time>
           </span>
@@ -279,9 +282,55 @@
       
 
       
-        <font color="#6495ED" size="6">A water problem</font><br><font color="#008000">Time Limit: 5000/2500 MS (Java/Others)    Memory Limit: 65536/65536 K (Java/Others)</font><br>Problem Description<br>Two planets named Haha and Xixi in the universe and they were created with the universe beginning.<br><br><a id="more"></a><br>There is 73 days in Xixi a year and 137 days in Haha a year.<br><br>Now you know the days N after Big Bang, you need to answer whether it is the first day in a year about the two planets.<br>Input<br>There are several test cases(about 5 huge test cases).<br><br>For each test, we have a line with an only integer N(0≤N), the length of N is up to 10000000.<br><br><br>Output<br>For the i-th test case, output Case #i: , then output “YES” or “NO” for the answer.<br><br><br>Sample Input<br>10001<br>0<br>333<br><br><br>Sample Output<br>Case #1: YES<br>Case #2: YES<br>Case #3: NO<br><br><font color="#FF0000" size="4">比赛的时候先用java的BIGInteger水一发结果MLE了<br>然后再用java写一个模拟取余<br>又MLE了。。。<br>然后发现此题没有用java过的，顿时不开森。（对java党如此不友好=。=）<br>附上C++AC代码</font>
+        <p><font color="#6495ED" size="6">B. Anatoly and Cockroaches</font></p>
+<p><font color="#008000">time limit per test 1 second<br>memory limit per test 256 megabytes<br>input standard input<br>output standard output</font><br>Anatoly lives in the university dorm as many other students do.<a id="more"></a> As you know, cockroaches are also living there together with students. Cockroaches might be of two colors: black and red. There are n cockroaches living in Anatoly’s room.</p>
+<p>Anatoly just made all his cockroaches to form a single line. As he is a perfectionist, he would like the colors of cockroaches in the line toalternate. He has a can of black paint and a can of red paint. In one turn he can either swap any two cockroaches, or take any single cockroach and change it’s color.<br>Help Anatoly find out the minimum number of turns he needs to make the colors of cockroaches in the line alternate.<br>Input<br>The first line of the input contains a single integer n (1 ≤ n ≤ 100 000) — the number of cockroaches.<br>The second line contains a string of length n, consisting of characters ‘b’ and ‘r’ that denote black cockroach and red cockroach respectively.<br>Output<br>Print one integer — the minimum number of moves Anatoly has to perform in order to make the colors of cockroaches in the line to alternate.<br>Examples<br>input<br>5<br>rbbrr<br>output<br>1<br>input<br>5<br>bbbbb<br>output<br>2<br>input<br>3<br>rbr<br>output<br>0<br>Note<br>In the first sample, Anatoly has to swap third and fourth cockroaches. He needs 1 turn to do this.<br>In the second sample, the optimum answer is to paint the second and the fourth cockroaches red. This requires 2 turns.<br>In the third sample, the colors of cockroaches in the line are alternating already, thus the answer is 0.</p>
+<p><font color="#FF0000" size="4"><br>题解：<br>哈哈哈博主做题时脑抽了<br> In one turn he can either swap any two cockroaches,<br> In one turn he can either swap any two cockroaches,<br> In one turn he can either swap any two cockroaches,<br>请读三遍，这是可以任意交换两个啊，博主做的时候以为只能交换相邻的…然后花式WA…<br>那么这个问题就很简单了，首先目标状态只有两种：<br>要么是rbrbrbrbrbrbrbr……<br>或者brbrbrbrbrbrbrb……<br>所以我们只要分别统计原字符串和这两个字符串有多少处错误，<br>然后<br>关键的一点：举个例子<br>原input：rrbr<br>一：对照rbrb 那么这里1，3号位错了，b1有两个错，<br>2号位错了，r1有一个错，所以我们可以交换一次rb，然后把剩下的一个b改成r<br>所以操作数为2，也就是说这种情况下答案是Math.max（b1,r1)=2。<br>二：对照brbr 0号位错了，b2有一个错，r2没有错<br>这种情况下答案是Math.max（b2,r2)=1。<br>最后两种情况下取最小就行了。</font></p>
+<p>code：<br></p>
+<pre><code class="java"><span class="keyword">import</span> java.io.*;  
+<span class="keyword">import</span> java.util.*;  
 
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></div><div class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></div><div class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</div><div class="line"><span class="keyword">char</span> shu[<span class="number">10000000</span>];</div><div class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></div><div class="line">&#123;</div><div class="line"><span class="keyword">int</span> cs=<span class="number">0</span>;</div><div class="line"><span class="keyword">while</span>(<span class="built_in">scanf</span>(<span class="string">"%s"</span>,&amp;shu)!=EOF)</div><div class="line">&#123;</div><div class="line">cs++;</div><div class="line"><span class="keyword">long</span> sum=<span class="number">0</span>;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="built_in">strlen</span>(shu);i++)</div><div class="line">&#123;</div><div class="line">sum=(sum*<span class="number">10</span>+shu[i]-<span class="string">'0'</span>)%<span class="number">10001</span>;</div><div class="line">&#125;</div><div class="line"><span class="built_in">printf</span>(<span class="string">"Case #%d: "</span>,cs);</div><div class="line"><span class="keyword">if</span>(sum==<span class="number">0</span>)</div><div class="line"><span class="built_in">printf</span>(<span class="string">"YES\n"</span>);</div><div class="line"><span class="keyword">else</span></div><div class="line"><span class="built_in">printf</span>(<span class="string">"NO\n"</span>);</div><div class="line">&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>{  
+
+    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>{  
+    Scanner sc=<span class="keyword">new</span> Scanner(System.in);  
+    <span class="keyword">while</span>(sc.hasNext()){  
+        <span class="keyword">int</span> n=sc.nextInt();  
+        String s1=sc.next();  
+        StringBuilder s=<span class="keyword">new</span> StringBuilder(s1);  
+        <span class="keyword">int</span> l=s.length();  
+        <span class="keyword">int</span> count1r=<span class="number">0</span>;  
+        <span class="keyword">int</span> count1b=<span class="number">0</span>;  
+        <span class="comment">//count1:count for mistakes of string which is compared with rbrbrbrbrbrbrbrbrb  </span>
+        <span class="keyword">int</span> count2r=<span class="number">0</span>;  
+        <span class="keyword">int</span> count2b=<span class="number">0</span>;  
+        <span class="comment">//count2:count for mistakes of string which is compared with brbrbrbrbrbrbrbrbr    </span>
+        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;l;i++){  
+            <span class="keyword">if</span>(i%<span class="number">2</span>!=<span class="number">0</span>){  
+                <span class="keyword">if</span>(s.charAt(i)==<span class="string">'r'</span>){  
+                    count1r++;  
+                }  
+                <span class="keyword">if</span>(s.charAt(i)==<span class="string">'b'</span>){  
+                    count2b++;  
+                }  
+            }  
+            <span class="keyword">else</span>{  
+                <span class="keyword">if</span>(s.charAt(i)==<span class="string">'r'</span>){  
+                    count2r++;  
+                }  
+                <span class="keyword">if</span>(s.charAt(i)==<span class="string">'b'</span>){  
+                    count1b++;  
+                }  
+            }  
+        }  
+
+        System.out.println(Math.min(Math.max(count1r, count1b),Math.max(count2r, count2b)));  
+        }  
+
+    }  
+}
+</code></pre>
+
       
     </div>
 
@@ -306,12 +355,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2016/10/24/成功的背后！（给所有IT人）（转）/" rel="next" title="成功的背后！（给所有IT人）（转）">
+                <i class="fa fa-chevron-left"></i> 成功的背后！（给所有IT人）（转）
+              </a>
+            
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/10/24/hdu5842-Lweb-and-String-续缘之路/" rel="prev" title="hdu5842-Lweb and String-续缘之路">
-                hdu5842-Lweb and String-续缘之路 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/10/24/异或交换两数的陷阱/" rel="prev" title="异或交换两数的陷阱">
+                异或交换两数的陷阱 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
