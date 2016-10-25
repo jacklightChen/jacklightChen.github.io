@@ -15,25 +15,16 @@
 
 
 
-<meta name="description" content="Lweb and StringTime Limit: 2000/1000 MS (Java/Others)    Memory Limit: 65536/65536 K (Java/Others)
-
-
-Problem DescriptionLweb has a string S.">
+<meta name="description" content="Lweb and StringTime Limit: 2000/1000 MS (Java/Others)    Memory Limit: 65536/65536 K (Java/Others)Problem DescriptionLweb has a string S.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="hdu5842-Lweb and String-续缘之路">
 <meta property="og:url" content="http://yoursite.com/2016/10/24/hdu5842-Lweb-and-String-续缘之路/index.html">
 <meta property="og:site_name" content="陈续缘的blog">
-<meta property="og:description" content="Lweb and StringTime Limit: 2000/1000 MS (Java/Others)    Memory Limit: 65536/65536 K (Java/Others)
-
-
-Problem DescriptionLweb has a string S.">
-<meta property="og:updated_time" content="2016-10-24T03:08:35.745Z">
+<meta property="og:description" content="Lweb and StringTime Limit: 2000/1000 MS (Java/Others)    Memory Limit: 65536/65536 K (Java/Others)Problem DescriptionLweb has a string S.">
+<meta property="og:updated_time" content="2016-10-25T14:07:11.598Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hdu5842-Lweb and String-续缘之路">
-<meta name="twitter:description" content="Lweb and StringTime Limit: 2000/1000 MS (Java/Others)    Memory Limit: 65536/65536 K (Java/Others)
-
-
-Problem DescriptionLweb has a string S.">
+<meta name="twitter:description" content="Lweb and StringTime Limit: 2000/1000 MS (Java/Others)    Memory Limit: 65536/65536 K (Java/Others)Problem DescriptionLweb has a string S.">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -168,6 +159,10 @@ Problem DescriptionLweb has a string S.">
                         
                             <li><a href="/archives/">所有文章</a></li>
                         
+                            <li><a href="/categories/算法/">算法</a></li>
+                        
+                            <li><a href="/tags/随笔/">随笔</a></li>
+                        
                         </ul>
                     </nav>
                     <nav class="header-nav">
@@ -184,7 +179,7 @@ Problem DescriptionLweb has a string S.">
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KMP/">KMP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二分查找/">二分查找</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他/">其他</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动态规划/">动态规划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/快速取余/">快速取余</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/快速幂/">快速幂</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/贪心/">贪心</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/逻辑/">逻辑</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/队列/">队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
                     </div>
                 </section>
                 
@@ -224,6 +219,10 @@ Problem DescriptionLweb has a string S.">
                     <li><a href="/">主页</a></li>
                 
                     <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/categories/算法/">算法</a></li>
+                
+                    <li><a href="/tags/随笔/">随笔</a></li>
                 
                 <div class="clearfix"></div>
                 </ul>
@@ -268,8 +267,16 @@ Problem DescriptionLweb has a string S.">
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/算法/">算法</a>
+    </div>
+
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/逻辑/">逻辑</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -277,25 +284,7 @@ Problem DescriptionLweb has a string S.">
     <div class="article-entry" itemprop="articleBody">
       
           
-        <font color="#6495ED" size="6">Lweb and String</font><br><font color="#008000">Time Limit: 2000/1000 MS (Java/Others)    Memory Limit: 65536/65536 K (Java/Others)</font>
-
-
-<p>Problem Description<br>Lweb has a string S.<br><a id="more"></a><br>Oneday, he decided to transform this string to a new sequence. </p>
-<p>You need help him determine this transformation to get a sequence which has the longest LIS(Strictly Increasing). </p>
-<p>You need transform every letter in this string to a new number.</p>
-<p>A is the set of letters of S, B is the set of natural numbers. </p>
-<p>Every injection f:A→B can be treat as an legal transformation. </p>
-<p>For example, a String “aabc”, A={a,b,c}, and you can transform it to “1 1 2 3”, and the LIS of the new sequence is 3. </p>
-<p>Now help Lweb, find the longest LIS which you can obtain from S.</p>
-<p>LIS: Longest Increasing Subsequence. (<a href="https://en.wikipedia.org/wiki/Longest_increasing_subsequence" target="_blank" rel="external">https://en.wikipedia.org/wiki/Longest_increasing_subsequence</a>)</p>
-<p>Input<br>The first line of the input contains the only integer T,(1≤T≤20).</p>
-<p>Then T lines follow, the i-th line contains a string S only containing the lowercase letters, the length of S will not exceed 105.</p>
-<p>Output<br>For each test case, output a single line “Case #x: y”, where x is the case number, starting from 1. And y is the answer.</p>
-<p>Sample Input<br>2<br>aabcc<br>acdeaa</p>
-<p>Sample Output<br>Case #1: 3<br>Case #2: 4</p>
-<p>Author<br>UESTC</p>
-<p>Source<br>2016中国大学生程序设计竞赛 - 网络选拔赛</p>
-<font color="#FF0000" size="4"><br>这道题一开始把我引向最长上升子序列。。汗<br>结果并不需要，因为a不一定映射成1，a也可以映射成2，3，4…但是一个单词对应的数字是唯一的<br>所以只需要统计一共有多少个不同的字母就能知道最长上升子序列的长度<br><br>AC代码：</font>
+        <font color="#6495ED" size="5" face="微软雅黑">Lweb and String</font><br><font color="#008000" size="4" face="微软雅黑">Time Limit: 2000/1000 MS (Java/Others)    Memory Limit: 65536/65536 K (Java/Others)</font><br>Problem Description<br>Lweb has a string S.<br><a id="more"></a><br>Oneday, he decided to transform this string to a new sequence.<br><br>You need help him determine this transformation to get a sequence which has the longest LIS(Strictly Increasing).<br><br>You need transform every letter in this string to a new number.<br><br>A is the set of letters of S, B is the set of natural numbers.<br><br>Every injection f:A→B can be treat as an legal transformation.<br><br>For example, a String “aabc”, A={a,b,c}, and you can transform it to “1 1 2 3”, and the LIS of the new sequence is 3.<br><br>Now help Lweb, find the longest LIS which you can obtain from S.<br><br>LIS: Longest Increasing Subsequence. (<a href="https://en.wikipedia.org/wiki/Longest_increasing_subsequence" target="_blank" rel="external">https://en.wikipedia.org/wiki/Longest_increasing_subsequence</a>)<br><br><br>Input<br>The first line of the input contains the only integer T,(1≤T≤20).<br><br>Then T lines follow, the i-th line contains a string S only containing the lowercase letters, the length of S will not exceed 105.<br><br><br>Output<br>For each test case, output a single line “Case #x: y”, where x is the case number, starting from 1. And y is the answer.<br><br><br>Sample Input<br>2<br>aabcc<br>acdeaa<br><br><br>Sample Output<br>Case #1: 3<br>Case #2: 4<br><br><br>Author<br>UESTC<br><br><br>Source<br>2016中国大学生程序设计竞赛 - 网络选拔赛<br><br><br><font color="#FF0000" size="4"><br>这道题一开始把我引向最长上升子序列。。汗<br>结果并不需要，因为a不一定映射成1，a也可以映射成2，3，4…但是一个单词对应的数字是唯一的<br>所以只需要统计一共有多少个不同的字母就能知道最长上升子序列的长度<br><br>AC代码：</font>
 
 <figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.io.*;  </div><div class="line"><span class="keyword">import</span> java.util.*;  </div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;  </div><div class="line"><span class="keyword">static</span> String cur;  </div><div class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;  </div><div class="line">        Scanner sc=<span class="keyword">new</span> Scanner(System.in);  </div><div class="line">        Set&lt;Character&gt; set=<span class="keyword">new</span> HashSet&lt;Character&gt;();  </div><div class="line">        <span class="keyword">int</span> n=sc.nextInt();  </div><div class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)  </div><div class="line">        &#123;  </div><div class="line">            set.clear();  </div><div class="line">            cur=sc.next();  </div><div class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;cur.length();k++)  </div><div class="line">            &#123;  </div><div class="line">                set.add(cur.charAt(k));  </div><div class="line">            &#125;  </div><div class="line">            System.out.print(<span class="string">"Case #"</span>+i+<span class="string">": "</span>);  </div><div class="line">            System.out.println(set.size());  </div><div class="line">        &#125;  </div><div class="line">  </div><div class="line">    &#125;  </div><div class="line">  </div><div class="line">&#125;</div></pre></td></tr></table></figure>
 
@@ -309,7 +298,7 @@ Problem DescriptionLweb has a string S.">
         <p><span>本文标题:</span><a href="/2016/10/24/hdu5842-Lweb-and-String-续缘之路/">hdu5842-Lweb and String-续缘之路</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">陈续缘</a></p>
         <p><span>发布时间:</span>2016-10-24, 11:04:40</p>
-        <p><span>最后更新:</span>2016-10-24, 11:08:35</p>
+        <p><span>最后更新:</span>2016-10-25, 22:07:11</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/10/24/hdu5842-Lweb-and-String-续缘之路/" title="hdu5842-Lweb and String-续缘之路">http://yoursite.com/2016/10/24/hdu5842-Lweb-and-String-续缘之路/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/10/24/hdu5842-Lweb-and-String-续缘之路/　　作者: 陈续缘" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>

@@ -23,7 +23,7 @@ Time Limit: 1000MS         Memory Limit: 65536KTotal Submissions: 36962         
 <meta property="og:site_name" content="陈续缘的blog">
 <meta property="og:description" content="Oulipo
 Time Limit: 1000MS         Memory Limit: 65536KTotal Submissions: 36962         Accepted: 14918DescriptionThe French author Georges Perec (1936–1982) once wrote a book, La disparition, without">
-<meta property="og:updated_time" content="2016-10-24T05:03:41.420Z">
+<meta property="og:updated_time" content="2016-10-25T13:57:03.582Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="POJ 3461 Oulipo(KMP详解)">
 <meta name="twitter:description" content="Oulipo
@@ -162,6 +162,10 @@ Time Limit: 1000MS         Memory Limit: 65536KTotal Submissions: 36962         
                         
                             <li><a href="/archives/">所有文章</a></li>
                         
+                            <li><a href="/categories/算法/">算法</a></li>
+                        
+                            <li><a href="/tags/随笔/">随笔</a></li>
+                        
                         </ul>
                     </nav>
                     <nav class="header-nav">
@@ -178,7 +182,7 @@ Time Limit: 1000MS         Memory Limit: 65536KTotal Submissions: 36962         
                 
                 <section class="switch-part switch-part2">
                     <div class="widget tagcloud" id="js-tagcloud">
-                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/算法/">算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
+                        <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/C/">C++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Java/">Java</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/KMP/">KMP</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/二分查找/">二分查找</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/其他/">其他</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/动态规划/">动态规划</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/快速取余/">快速取余</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/快速幂/">快速幂</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/数据结构/">数据结构</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/贪心/">贪心</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/逻辑/">逻辑</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/队列/">队列</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/随笔/">随笔</a></li></ul>
                     </div>
                 </section>
                 
@@ -218,6 +222,10 @@ Time Limit: 1000MS         Memory Limit: 65536KTotal Submissions: 36962         
                     <li><a href="/">主页</a></li>
                 
                     <li><a href="/archives/">所有文章</a></li>
+                
+                    <li><a href="/categories/算法/">算法</a></li>
+                
+                    <li><a href="/tags/随笔/">随笔</a></li>
                 
                 <div class="clearfix"></div>
                 </ul>
@@ -262,8 +270,16 @@ Time Limit: 1000MS         Memory Limit: 65536KTotal Submissions: 36962         
       
       <div class="article-info article-info-post">
         
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/算法/">算法</a>
+    </div>
+
 
         
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/KMP/">KMP</a></li></ul>
+    </div>
+
         <div class="clearfix"></div>
       </div>
       
@@ -271,8 +287,8 @@ Time Limit: 1000MS         Memory Limit: 65536KTotal Submissions: 36962         
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p><font color="#6495ED" size="6">Oulipo</font></p>
-<p><font color="#008000">Time Limit: 1000MS         Memory Limit: 65536K<br>Total Submissions: 36962         Accepted: 14918<br>Description</font><br>The French author Georges Perec (1936–1982) once wrote a book, La disparition, without the letter ‘e’.<a id="more"></a> He was a member of the Oulipo group. A quote from the book:<br>Tout avait Pair normal, mais tout s’affirmait faux. Tout avait Fair normal, d’abord, puis surgissait l’inhumain, l’affolant. Il aurait voulu savoir où s’articulait l’association qui l’unissait au roman : stir son tapis, assaillant à tout instant son imagination, l’intuition d’un tabou, la vision d’un mal obscur, d’un quoi vacant, d’un non-dit : la vision, l’avision d’un oubli commandant tout, où s’abolissait la raison : tout avait l’air normal mais…<br>Perec would probably have scored high (or rather, low) in the following contest. People are asked to write a perhaps even meaningful text on some subject with as few occurrences of a given “word” as possible. Our task is to provide the jury with a program that counts these occurrences, in order to obtain a ranking of the competitors. These competitors often write very long texts with nonsense meaning; a sequence of 500,000 consecutive ‘T’s is not unusual. And they never use spaces.<br>So we want to quickly find out how often a word, i.e., a given string, occurs in a text. More formally: given the alphabet {‘A’, ‘B’, ‘C’, …, ‘Z’} and two finite strings over that alphabet, a word W and a text T, count the number of occurrences of W in T. All the consecutive characters of W must exactly match consecutive characters of T. Occurrences may overlap.<br>Input<br>The first line of the input file contains a single number: the number of test cases to follow. Each test case has the following format:</p>
+        <p><font color="#6495ED" size="5" face="微软雅黑">Oulipo</font></p>
+<p><font color="#008000" size="4" face="微软雅黑">Time Limit: 1000MS         Memory Limit: 65536K<br>Total Submissions: 36962         Accepted: 14918<br>Description</font><br>The French author Georges Perec (1936–1982) once wrote a book, La disparition, without the letter ‘e’.<a id="more"></a> He was a member of the Oulipo group. A quote from the book:<br>Tout avait Pair normal, mais tout s’affirmait faux. Tout avait Fair normal, d’abord, puis surgissait l’inhumain, l’affolant. Il aurait voulu savoir où s’articulait l’association qui l’unissait au roman : stir son tapis, assaillant à tout instant son imagination, l’intuition d’un tabou, la vision d’un mal obscur, d’un quoi vacant, d’un non-dit : la vision, l’avision d’un oubli commandant tout, où s’abolissait la raison : tout avait l’air normal mais…<br>Perec would probably have scored high (or rather, low) in the following contest. People are asked to write a perhaps even meaningful text on some subject with as few occurrences of a given “word” as possible. Our task is to provide the jury with a program that counts these occurrences, in order to obtain a ranking of the competitors. These competitors often write very long texts with nonsense meaning; a sequence of 500,000 consecutive ‘T’s is not unusual. And they never use spaces.<br>So we want to quickly find out how often a word, i.e., a given string, occurs in a text. More formally: given the alphabet {‘A’, ‘B’, ‘C’, …, ‘Z’} and two finite strings over that alphabet, a word W and a text T, count the number of occurrences of W in T. All the consecutive characters of W must exactly match consecutive characters of T. Occurrences may overlap.<br>Input<br>The first line of the input file contains a single number: the number of test cases to follow. Each test case has the following format:</p>
 <p>One line with the word W, a string over {‘A’, ‘B’, ‘C’, …, ‘Z’}, with 1 ≤ |W| ≤ 10,000 (here |W| denotes the length of the string W).<br>One line with the text T, a string over {‘A’, ‘B’, ‘C’, …, ‘Z’}, with |W| ≤ |T| ≤ 1,000,000.<br>Output</p>
 <p>For every test case in the input file, the output should contain a single number, on a single line: the number of occurrences of the word W in the text T.</p>
 <p>Sample Input</p>
@@ -291,7 +307,7 @@ Time Limit: 1000MS         Memory Limit: 65536KTotal Submissions: 36962         
         <p><span>本文标题:</span><a href="/2016/10/24/POJ-3461-Oulipo-KMP详解/">POJ 3461 Oulipo(KMP详解)</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">陈续缘</a></p>
         <p><span>发布时间:</span>2016-10-24, 12:36:23</p>
-        <p><span>最后更新:</span>2016-10-24, 13:03:41</p>
+        <p><span>最后更新:</span>2016-10-25, 21:57:03</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/10/24/POJ-3461-Oulipo-KMP详解/" title="POJ 3461 Oulipo(KMP详解)">http://yoursite.com/2016/10/24/POJ-3461-Oulipo-KMP详解/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/10/24/POJ-3461-Oulipo-KMP详解/　　作者: 陈续缘" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
