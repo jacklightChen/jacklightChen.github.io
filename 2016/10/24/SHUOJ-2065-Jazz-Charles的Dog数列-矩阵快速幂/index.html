@@ -15,18 +15,18 @@
 
 
 
-<meta name="description" content="Jazz_Charles的Dog数列Description">
+<meta name="description" content="Jazz_Charles的Dog数列DescriptionJazz_Charles发现了一个数列称为Dog数列：">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SHUOJ 2065 Jazz_Charles的Dog数列(矩阵快速幂)">
 <meta property="og:url" content="http://yoursite.com/2016/10/24/SHUOJ-2065-Jazz-Charles的Dog数列-矩阵快速幂/index.html">
 <meta property="og:site_name" content="陈续缘的blog">
-<meta property="og:description" content="Jazz_Charles的Dog数列Description">
+<meta property="og:description" content="Jazz_Charles的Dog数列DescriptionJazz_Charles发现了一个数列称为Dog数列：">
 <meta property="og:image" content="http://ofj2afd76.bkt.clouddn.com/20140907103041185.gif">
 <meta property="og:image" content="http://ofj2afd76.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20161024122108.png">
-<meta property="og:updated_time" content="2016-10-25T13:59:29.468Z">
+<meta property="og:updated_time" content="2016-10-25T15:22:27.592Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SHUOJ 2065 Jazz_Charles的Dog数列(矩阵快速幂)">
-<meta name="twitter:description" content="Jazz_Charles的Dog数列Description">
+<meta name="twitter:description" content="Jazz_Charles的Dog数列DescriptionJazz_Charles发现了一个数列称为Dog数列：">
 <meta name="twitter:image" content="http://ofj2afd76.bkt.clouddn.com/20140907103041185.gif">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
@@ -89,6 +89,16 @@
 
 
 
+
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "//hm.baidu.com/hm.js?f2cd90f341d2a2d1f4f54b2bec55085c";
+            var s = document.getElementsByTagName("script")[0]; 
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
 
 
 </head>
@@ -287,7 +297,7 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <font color="#6495ED" size="5" face="微软雅黑">Jazz_Charles的Dog数列</font><br><font color="#008000" size="4" face="微软雅黑">Description</font><br><a id="more"></a><br>Jazz_Charles发现了一个数列称为Dog数列：<br><br>                A[1] = 1<br><br>                A[2] = 1<br><br>                A[n] = A[n-1] + 8<em>A[n-2]<br><br>onisac看到这个数列之后，问了Jazz_Charles一个简单的问题，给定一个整数n，求A[n]是多少？<br><br>Jazz_Charles自然是答不来的，所以他请你替他回答这个问题。<br><br><br>（Dog数列名称由来(●’◡’●)）<br><br>Input<br>多组数据，每组一行，一个整数n(0&lt;n&lt;=10000000000000)<br><br>Output<br>每组输出一行，输出A[n] (对100000007取膜)<br><br>Sample Input<br> 1<br>2<br>3<br>Sample Output<br> 1<br>1<br>9<br>HINT<br>暴力写是不行的哦<br>汪汪汪 Java BigInteger BigDecimal花式TLE<br>换C++大数模板花式TLE<br>搜OEIS看到通项公式 a(n) = (((1+sqrt(33))/2)^(n+1) - ((1-sqrt(33))/2)^(n+1))/sqrt(33).<br>然后心里美滋滋的暴力一发花式TLE<br>然后灵光一闪 这不是和快速幂模很像吗。。<br>果然自己还是太弱了。。这摆明了要0(logn)的算法，我用O(n)硬怼。。<br>但小数又没有取模规则。。肯定有其他方法。。<br>然后到处找找到了做法。。<br>随缘写了一发过了。。<br>题解：用矩阵快速幂<br><img src="http://ofj2afd76.bkt.clouddn.com/20140907103041185.gif" alt="斐波那契"><br>这很重要，上面的是用矩阵快速幂来模拟斐波那契数列的过程<br>详情百度搜索poj3070or斐波那契数列快速幂模<br>所以这道题的单位矩阵变一下就好了，变成：1，1<br>                                        8，0<br>也就是说(b,a)</em>(1,1)       =(b+8<em>a,b);(意思理解就好了）<br>              (8,0)<br>看<br>也就是说乘一次转换矩阵就相当变换了一次，而原始矩阵我们可以构造的和转换矩阵一样，因为恰好F(1)=1且F(2)=1，见图，左是原始矩阵(正好跟转换矩阵一样)，右是我们每次乘的矩阵。<br>//算了我编不下去了，其实是随便猜了一个正好对了就是这样。。(划掉)<br><img src="http://ofj2afd76.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20161024122108.png" alt="题解"><br>所以我们只要关心那个转换矩阵的n次幂后第0行第1个的值就是我们要求的值<br>而快速幂的好处就是将本来一个一个乘导致的O(n)的复杂度降到O(logn)所以不会超时，而因为取模规则a^n%p可以化简为（（a%p)^n）%p/</em>(大概0.0，记得是这样的。。）*/所以每次取模保证不会溢出，快速幂中也可以运用这条规则，这就造就了快速幂模完美地解决了时间复杂度和溢出的问题。<br><br><font color="#FF0000" size="4"><br> AC Code：<br></font>
+        <script src="/assets/js/APlayer.min.js"> </script><font color="#6495ED" size="5" face="微软雅黑">Jazz_Charles的Dog数列</font><br><font color="#008000" size="4" face="微软雅黑">Description</font><br>Jazz_Charles发现了一个数列称为Dog数列：<a id="more"></a><br><br>                A[1] = 1<br><br>                A[2] = 1<br><br>                A[n] = A[n-1] + 8<em>A[n-2]<br><br>onisac看到这个数列之后，问了Jazz_Charles一个简单的问题，给定一个整数n，求A[n]是多少？<br><br>Jazz_Charles自然是答不来的，所以他请你替他回答这个问题。<br><br><br>（Dog数列名称由来(●’◡’●)）<br><br>Input<br>多组数据，每组一行，一个整数n(0&lt;n&lt;=10000000000000)<br><br>Output<br>每组输出一行，输出A[n] (对100000007取膜)<br><br>Sample Input<br> 1<br>2<br>3<br>Sample Output<br> 1<br>1<br>9<br>HINT<br>暴力写是不行的哦<br>汪汪汪 Java BigInteger BigDecimal花式TLE<br>换C++大数模板花式TLE<br>搜OEIS看到通项公式 a(n) = (((1+sqrt(33))/2)^(n+1) - ((1-sqrt(33))/2)^(n+1))/sqrt(33).<br>然后心里美滋滋的暴力一发花式TLE<br>然后灵光一闪 这不是和快速幂模很像吗。。<br>果然自己还是太弱了。。这摆明了要0(logn)的算法，我用O(n)硬怼。。<br>但小数又没有取模规则。。肯定有其他方法。。<br>然后到处找找到了做法。。<br>随缘写了一发过了。。<br>题解：用矩阵快速幂<br><img src="http://ofj2afd76.bkt.clouddn.com/20140907103041185.gif" alt="斐波那契"><br>这很重要，上面的是用矩阵快速幂来模拟斐波那契数列的过程<br>详情百度搜索poj3070or斐波那契数列快速幂模<br>所以这道题的单位矩阵变一下就好了，变成：1，1<br>                                        8，0<br>也就是说(b,a)</em>(1,1)       =(b+8<em>a,b);(意思理解就好了）<br>              (8,0)<br>看<br>也就是说乘一次转换矩阵就相当变换了一次，而原始矩阵我们可以构造的和转换矩阵一样，因为恰好F(1)=1且F(2)=1，见图，左是原始矩阵(正好跟转换矩阵一样)，右是我们每次乘的矩阵。<br>//算了我编不下去了，其实是随便猜了一个正好对了就是这样。。(划掉)<br><img src="http://ofj2afd76.bkt.clouddn.com/QQ%E6%88%AA%E5%9B%BE20161024122108.png" alt="题解"><br>所以我们只要关心那个转换矩阵的n次幂后第0行第1个的值就是我们要求的值<br>而快速幂的好处就是将本来一个一个乘导致的O(n)的复杂度降到O(logn)所以不会超时，而因为取模规则a^n%p可以化简为（（a%p)^n）%p/</em>(大概0.0，记得是这样的。。）*/所以每次取模保证不会溢出，快速幂中也可以运用这条规则，这就造就了快速幂模完美地解决了时间复杂度和溢出的问题。<br><br><font color="#FF0000" size="4"><br> AC Code：<br></font>
 
 <pre><code class="java"><span class="comment">//package K;  </span>
 <span class="keyword">import</span> java.io.*;  
@@ -407,7 +417,7 @@ matrix base = {<span class="number">1</span>, <span class="number">1</span>, <sp
         <p><span>本文标题:</span><a href="/2016/10/24/SHUOJ-2065-Jazz-Charles的Dog数列-矩阵快速幂/">SHUOJ 2065 Jazz_Charles的Dog数列(矩阵快速幂)</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">陈续缘</a></p>
         <p><span>发布时间:</span>2016-10-24, 11:25:55</p>
-        <p><span>最后更新:</span>2016-10-25, 21:59:29</p>
+        <p><span>最后更新:</span>2016-10-25, 23:22:27</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/10/24/SHUOJ-2065-Jazz-Charles的Dog数列-矩阵快速幂/" title="SHUOJ 2065 Jazz_Charles的Dog数列(矩阵快速幂)">http://yoursite.com/2016/10/24/SHUOJ-2065-Jazz-Charles的Dog数列-矩阵快速幂/</a>
             <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/10/24/SHUOJ-2065-Jazz-Charles的Dog数列-矩阵快速幂/　　作者: 陈续缘" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
@@ -569,7 +579,7 @@ matrix base = {<span class="number">1</span>, <span class="number">1</span>, <sp
         
     </div>
 
-    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/I'm here waiting for Your touch/">I'm here waiting for Your touch</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/POJ-3461-Oulipo-KMP详解/">POJ 3461 Oulipo(KMP详解)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/Exams-Codeforces-Round-377-D-贪心-二分/">Exams Codeforces Round#377-D(贪心+二分)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/Sanatorium-Codeforces-Round-377-C-逻辑/">Sanatorium Codeforces Round#377-C(逻辑)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/SHUOJ-1611-矩阵连乘问题（dp）/">SHUOJ 1611 矩阵连乘问题（dp）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/SHUOJ-2065-Jazz-Charles的Dog数列-矩阵快速幂/">SHUOJ 2065 Jazz_Charles的Dog数列(矩阵快速幂)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/Text-Document-Analysis-Codeforces-Round-375-B/">Text Document Analysis Codeforces Round#375-B</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/The-New-Year-Meeting-Friends-Codeforces-Round-375-A/">The New Year: Meeting Friends Codeforces Round#375-A</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/Verse-Pattern-Codeforces-Intel-Round-B/">Verse Pattern Codeforces Intel Round-B</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/Broken-Clock-Codeforces-Intel-Round-A/">Broken Clock Codeforces Intel Round-A</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/Passwords-Codeforces-Round-374-B/">Passwords Codeforces Round#374-B</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/异或交换两数的陷阱/">异或交换两数的陷阱</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/Anatoly-and-Cockroaches-Codeforces-Round-373-B/">Anatoly and Cockroaches Codeforces Round#373-B</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/成功的背后！（给所有IT人）（转）/">成功的背后！（给所有IT人）（转）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/hdu-5835-续缘之路/">hdu-5835-续缘之路</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/hdu5842-Lweb-and-String-续缘之路/">hdu5842-Lweb and String-续缘之路</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/hdu5832-A water problem-续缘之路/">hdu5832-A water problem-续缘之路</a></li></ul>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/I'm here waiting for Your touch/">I'm here waiting for Your touch</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/POJ-3461-Oulipo-KMP详解/">POJ 3461 Oulipo(KMP详解)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/Exams-Codeforces-Round-377-D-贪心-二分/">Exams Codeforces Round#377-D(贪心+二分)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/SHUOJ-1611-矩阵连乘问题（dp）/">SHUOJ 1611 矩阵连乘问题（dp）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/SHUOJ-2065-Jazz-Charles的Dog数列-矩阵快速幂/">SHUOJ 2065 Jazz_Charles的Dog数列(矩阵快速幂)</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/Text-Document-Analysis-Codeforces-Round-375-B/">Text Document Analysis Codeforces Round#375-B</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/The-New-Year-Meeting-Friends-Codeforces-Round-375-A/">The New Year: Meeting Friends Codeforces Round#375-A</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/Verse-Pattern-Codeforces-Intel-Round-B/">Verse Pattern Codeforces Intel Round-B</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/Broken-Clock-Codeforces-Intel-Round-A/">Broken Clock Codeforces Intel Round-A</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/Passwords-Codeforces-Round-374-B/">Passwords Codeforces Round#374-B</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/异或交换两数的陷阱/">异或交换两数的陷阱</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/Anatoly-and-Cockroaches-Codeforces-Round-373-B/">Anatoly and Cockroaches Codeforces Round#373-B</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/成功的背后！（给所有IT人）（转）/">成功的背后！（给所有IT人）（转）</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/hdu-5835-续缘之路/">hdu-5835-续缘之路</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/hdu5842-Lweb-and-String-续缘之路/">hdu5842-Lweb and String-续缘之路</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/24/hdu5832-A water problem-续缘之路/">hdu5832-A water problem-续缘之路</a></li></ul>
 
 
 
