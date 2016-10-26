@@ -15,16 +15,16 @@
 
 
 
-<meta name="description" content="略微了解了点正则表达式0.0">
+<meta name="description" content="略微了解了点正则表达式0.0这里借POJ3461的题目重新用Pattern和Matcher写了一遍">
 <meta property="og:type" content="article">
 <meta property="og:title" content="正则表达式模板">
 <meta property="og:url" content="https://jacklightchen.github.io/2016/10/26/正则表达式模板/index.html">
 <meta property="og:site_name" content="陈续缘的blog">
-<meta property="og:description" content="略微了解了点正则表达式0.0">
-<meta property="og:updated_time" content="2016-10-26T11:22:45.085Z">
+<meta property="og:description" content="略微了解了点正则表达式0.0这里借POJ3461的题目重新用Pattern和Matcher写了一遍">
+<meta property="og:updated_time" content="2016-10-26T11:38:19.862Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则表达式模板">
-<meta name="twitter:description" content="略微了解了点正则表达式0.0">
+<meta name="twitter:description" content="略微了解了点正则表达式0.0这里借POJ3461的题目重新用Pattern和Matcher写了一遍">
 
 <link rel="apple-touch-icon" href= "/apple-touch-icon.png">
 
@@ -171,7 +171,7 @@
                         
                             <li><a href="/categories/算法/">算法</a></li>
                         
-                            <li><a href="/tags/随笔/">随笔</a></li>
+                            <li><a href="/tags/">标签云</a></li>
                         
                         </ul>
                     </nav>
@@ -232,7 +232,7 @@
                 
                     <li><a href="/categories/算法/">算法</a></li>
                 
-                    <li><a href="/tags/随笔/">随笔</a></li>
+                    <li><a href="/tags/">标签云</a></li>
                 
                 <div class="clearfix"></div>
                 </ul>
@@ -294,8 +294,8 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <script src="/assets/js/APlayer.min.js"> </script><p><font color="#6495ED" size="5" face="微软雅黑">略微了解了点正则表达式0.0</font><a id="more"></a><br>这里借POJ3461的题目重新用Pattern和Matcher写了一遍,<br>也预料到TLE了…因为正则还是要同时移动j和i的，GG0.0也许我姿势还是不太对…但好歹熟悉了一遍写法…</p>
-<p>模板代码(自用)：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//poj3461 TLE</span></div><div class="line"><span class="keyword">import</span> java.io.*;</div><div class="line"><span class="keyword">import</span> java.util.*;</div><div class="line"><span class="keyword">import</span> java.util.regex.Matcher;</div><div class="line"><span class="keyword">import</span> java.util.regex.Pattern;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</div><div class="line"></div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		Scanner sc = <span class="keyword">new</span> Scanner(System.in);</div><div class="line">		<span class="keyword">int</span> n=sc.nextInt();</div><div class="line">		sc.nextLine();</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> o=<span class="number">1</span>;o&lt;=n;o++)&#123;</div><div class="line">		String s=sc.nextLine();	</div><div class="line">		Pattern p =Pattern.compile(s);</div><div class="line">		Matcher m =p.matcher(sc.nextLine());</div><div class="line">		<span class="keyword">int</span> count=<span class="number">0</span>;</div><div class="line">		<span class="keyword">int</span> i=<span class="number">0</span>;</div><div class="line">		<span class="keyword">while</span>(m.find(i))&#123;</div><div class="line">			count++;</div><div class="line">			i=m.start()+<span class="number">1</span>;</div><div class="line">		&#125;</div><div class="line">		System.out.println(count);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+        <script src="/assets/js/APlayer.min.js"> </script><p><font color="#6495ED" size="5" face="微软雅黑">略微了解了点正则表达式0.0</font><br>这里借POJ3461的题目重新用Pattern和Matcher写了一遍<a id="more"></a>,<br>也预料到TLE了…因为正则还是要同时移动j和i的，GG0.0也许我姿势还是不太对…但好歹熟悉了一遍写法…</p>
+<p>模板代码(自用)：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> java.io.*;</div><div class="line"><span class="keyword">import</span> java.util.*;</div><div class="line"><span class="keyword">import</span> java.util.regex.Matcher;</div><div class="line"><span class="keyword">import</span> java.util.regex.Pattern;</div><div class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</div><div class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</div><div class="line">		Scanner sc = <span class="keyword">new</span> Scanner(System.in);</div><div class="line">		<span class="keyword">int</span> n=sc.nextInt();</div><div class="line">		sc.nextLine();</div><div class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> o=<span class="number">1</span>;o&lt;=n;o++)&#123;</div><div class="line">		String s=sc.nextLine();	</div><div class="line">		Pattern p =Pattern.compile(s);</div><div class="line">		Matcher m =p.matcher(sc.nextLine());</div><div class="line">		<span class="keyword">int</span> count=<span class="number">0</span>;</div><div class="line">		<span class="keyword">int</span> i=<span class="number">0</span>;</div><div class="line">		<span class="keyword">while</span>(m.find(i))&#123;</div><div class="line">			count++;</div><div class="line">			i=m.start()+<span class="number">1</span>;</div><div class="line">		&#125;</div><div class="line">		System.out.println(count);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -307,7 +307,7 @@
         <p><span>本文标题:</span><a href="/2016/10/26/正则表达式模板/">正则表达式模板</a></p>
         <p><span>文章作者:</span><a href="/" title="回到主页">陈续缘</a></p>
         <p><span>发布时间:</span>2016-10-26, 19:16:01</p>
-        <p><span>最后更新:</span>2016-10-26, 19:22:45</p>
+        <p><span>最后更新:</span>2016-10-26, 19:38:19</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/10/26/正则表达式模板/" title="正则表达式模板">https://jacklightchen.github.io/2016/10/26/正则表达式模板/</a>
             <span class="copy-path" data-clipboard-text="原文: https://jacklightchen.github.io/2016/10/26/正则表达式模板/　　作者: 陈续缘" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
