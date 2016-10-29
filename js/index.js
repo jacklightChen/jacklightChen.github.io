@@ -24,7 +24,7 @@ var S = {
     if (i !== -1) {
       S.UI.simulate(decodeURI(action).substring(i + 3));
     } else {
-      S.UI.simulate('welcome to|blog|of|jacklight|Chen||');
+      S.UI.simulate('welcome to|blog|of|jacklight|Chen|↑↑↑||');
     }
 
     S.Drawing.loop(function () {
