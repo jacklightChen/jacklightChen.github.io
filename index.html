@@ -1,79 +1,40 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-
-  <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="15;url=http://blog.lightina.cn/"> 
-  <title>陈续缘的blog</title>
-
-  <link rel="stylesheet" href="css/normalize.css">
-
-    <link rel="stylesheet" href="css/style.css" media="screen" type="text/css" />
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/main.css" rel="stylesheet" type="text/css">
+    <title>Zhihao Chen | Homepage</title>
+    <meta name="description" content="Zhihao Chen's homepage">
 </head>
-
 <body>
-<center>
-<font color="#FF0080" size=9>
-<a href="http://blog.lightina.cn">博客入口</a>
-</font>
-</center>
-<div style="text-align:center;clear:both;position:absolute;top:0;left:260px">
-<script src="/gg_bd_ad_720x90.js" type="text/javascript"></script>
-<script src="/follow.js" type="text/javascript"></script>
-</div>
-<canvas class="canvas"></canvas>
-
-<div class="help">?</div> 
-
-<div class="ui">
-  <input class="ui-input" type="text" />
-  <span class="ui-return">↵</span>
-</div>
-
-<div class="overlay">
-  <div class="tabs">
-    <div class="tabs-labels"><span class="tabs-label">Commands</span><span class="tabs-label">Info</span><span class="tabs-label">Share</span></div>
-
-    <div class="tabs-panels">
-      <ul class="tabs-panel commands">
-        <li class="commands-item"><span class="commands-item-title">Text</span><span class="commands-item-info" data-demo="Hello :)">Type anything</span><span class="commands-item-action">Demo</span></li>
-        <li class="commands-item"><span class="commands-item-title">Countdown</span><span class="commands-item-info" data-demo="#countdown 10">#countdown<span class="commands-item-mode">number</span></span><span class="commands-item-action">Demo</span></li>
-        <li class="commands-item"><span class="commands-item-title">Time</span><span class="commands-item-info" data-demo="#time">#time</span><span class="commands-item-action">Demo</span></li>
-        <li class="commands-item"><span class="commands-item-title">Rectangle</span><span class="commands-item-info" data-demo="#rectangle 30x15">#rectangle<span class="commands-item-mode">width x height</span></span><span class="commands-item-action">Demo</span></li>
-        <li class="commands-item"><span class="commands-item-title">Circle</span><span class="commands-item-info" data-demo="#circle 25">#circle<span class="commands-item-mode">diameter</span></span><span class="commands-item-action">Demo</span></li>
-
-        <li class="commands-item commands-item--gap"><span class="commands-item-title">Animate</span><span class="commands-item-info" data-demo="The time is|#time|#countdown 3|#icon thumbs-up"><span class="commands-item-mode">command1</span>&nbsp;|<span class="commands-item-mode">command2</span></span><span class="commands-item-action">Demo</span></li>
-      </ul>
-
-      <div class="tabs-panel ui-details">
-        <div class="ui-details-content">
-          <h1>这是我拷贝别人的一个黑科技</h1>
-          <p>
-           你可以输入随意英文观看动态效果hhh<br/>
-            我的博客<a href="blog/">http://blog.lightina.cn/</a>
-          </p>
-			<br/>
-        </div>
-      </div>
-
-      <div class="tabs-panel ui-share">
-        <div class="ui-share-content">
-          <h1>Sharing</h1>
-          <p>Simply add <em>?a=</em> to the current URL to share any static or animated text. Examples:</p>
-          <p>
-            <a href="http://www.kennethcachia.com/shape-shifter?a=Hello" target="_blank">www.kennethcachia.com/shape-shifter?a=Hello</a><br/>
-            <a href="http://www.kennethcachia.com/shape-shifter?a=Hello|#countdown 3" target="_blank">www.kennethcachia.com/shape-shifter?a=Hello|#countdown 3</a>
-          </p>
-        </div>
-      </div>
+<div class="wrapper">
+    <div class="navbar container">
+        <a id="author-name" class="alignable pull-left" href="/">Zhihao Chen</a>
+        <ul id="navlist" class="alignable pull-right navbar-ul">
+            <li class="alignable pull-left nav-list"><a target="_blank" href="/">About</a> /</li>
+            <li class="alignable pull-left nav-list"><a target="_blank" href="https://blog.lightina.cn/">Blog</a> /</li>
+            <li class="alignable pull-left nav-list"><a target="_blank" href="https://github.com/jacklightChen">Github</a> /</li>
+            <li class="alignable pull-left nav-list"><a target="_blank" href="https://blog.lightina.cn/resume/resume.pdf">Resume</a></li>
+        </ul>
     </div>
-  </div>
+    <div style="clear:both"></div>
+    <hr>
+    <div class="container content">
+        <h2>About Me</h2>
+        <p>
+            <img class="profile-picture" src="https://avatars.githubusercontent.com/u/20631913?s=460&u=933aa0e806bf77cd2cb996e00c5d61097596df40&v=4">
+        </p>
+        <p>Hi! I am currently a second year postgraduate at school of data science and engineering (<a href="http://dase.ecnu.edu.cn/" >DASE</a>), ECNU. My research interests are blockchain systems.</p>
+        <p>More specifically, I am committed to building high-performance, reliable permissioned blockchain systems from the perspectives of system architecture, authenticated data structures and etc.</p>
+        <h2>Contact</h2>
+        <p>wechatid: czh199638</p>
+        <p>email: chenzh@stu.ecnu.edu.cn</p>
+        <h2>Publications</h2>
+        <ol>
+            <li><span style="font-weight: bold">Zhihao Chen</span>, Xiaodong Qi, Xiaofan Du, Zhao Zhang, Cheqing Jin. PEEP: A Parallel Execution Engine for Permissioned Blockchain Systems. The 26th International Conference on Database Systems for Advanced Applications (DASFAA), 2021, Full paper, Accepted (CCF-B)</li>
+        </ol>
+    </div>
 </div>
-
-  <script src="js/index.js"></script>
-
 </body>
-
 </html>

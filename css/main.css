@@ -1,0 +1,78 @@
+.wrapper {
+     min-height: 100%;
+}
+
+.container {
+    max-width: 700px;
+    margin: auto;
+}
+
+.navbar {
+    padding: 50px 0 50px 0;
+}
+
+#author-name {
+    font-size: 30px;
+    color: #272727;
+    display: inline-block;
+}
+
+.pull-left {
+ float: left;
+}
+
+.pull-right {
+    float: right;
+}
+
+.alignable {
+ display: inline-block;
+}
+
+a {
+ text-decoration: none;
+ color: #FF0F00;
+}
+
+.nav-list {
+    list-style-type: none;
+    margin: 0 5px 0 10px;
+}
+
+hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0,0,0,0.1);
+    border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+
+.content ol {
+    padding: 0 30px 0 30px;
+}
+
+.content ol {
+    counter-reset: list;
+}
+
+.content ol>li {
+    position: relative;
+    list-style: none;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.content ol>li:before {
+    content: "[" counter(list,decimal) "] ";
+    counter-increment: list;
+    position: absolute;
+    left: -30px;
+}
+
+.content .profile-picture {
+    height: 85px;
+    width: 85px;
+    position: relative;
+    margin: -10px 0 0 15px;
+    float: right;
+    border-radius: 50%;
+}
