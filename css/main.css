@@ -1,5 +1,6 @@
 .wrapper {
      min-height: 100%;
+     font-family: 'Roboto';
 }
 
 .container {
@@ -31,7 +32,7 @@
 
 a {
  text-decoration: none;
- color: #dc3545;
+ color: #Ae65rd;
 }
 
 .nav-list {
